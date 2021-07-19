@@ -1,4 +1,4 @@
-package org.camp.used.config;
+package org.camp.used.common.config;
 
 import javax.sql.DataSource;
 
@@ -21,7 +21,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @MapperScan(basePackages = {"org.camp.used.mapper"})
 @ComponentScan(basePackages = {"org.camp.used.service", "org.camp.used.aop"})
-@EnableAspectJAutoProxy // AOP 할수있음
+@EnableAspectJAutoProxy 
 @EnableTransactionManagement
 public class RootConfig {
 	static {

@@ -1,8 +1,8 @@
 package org.camp.used.board;
 
-import org.camp.used.config.RootConfig;
-import org.camp.used.dto.BoardInsertDTO;
-import org.camp.used.mapper.BoardMapper;
+import org.camp.used.board.dto.BoardInsertDTO;
+import org.camp.used.board.mapper.BoardMapper;
+import org.camp.used.common.config.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +24,9 @@ public class BoardMapperTests {
 		log.info("testInsert");
 		boardMapper.insert(
 				BoardInsertDTO.builder()
-				.btitle("½ÇÇè¿ë2")
-				.bcontent("½ÇÇè¿ë³»¿ë2")
-				.bprice("40¾ï")
+				.btitle("í…ŒìŠ¤íŠ¸ ì œëª©1")
+				.bcontent("í…ŒìŠ¤íŠ¸ ë‚´ìš©1")
+				.bprice("40ì–µ")
 				.bdeleted(false)
 				.memberMno(1L)
 				.build()
