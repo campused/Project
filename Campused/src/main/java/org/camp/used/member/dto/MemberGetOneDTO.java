@@ -2,8 +2,6 @@ package org.camp.used.member.dto;
 
 import java.time.LocalDateTime;
 
-import org.camp.used.board.dto.BoardInsertDTO;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MemberInsertDTO {
-
+public class MemberGetOneDTO {
+	
 	private String memail;
 	private String mnickname;
 	private String mpw;
@@ -24,5 +22,6 @@ public class MemberInsertDTO {
 	private Long mlikecount;
 	private LocalDateTime mregDate;
 	private LocalDateTime mmodDate;
+	
 	
 }
