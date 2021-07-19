@@ -1,4 +1,4 @@
-package org.camp.used.dto;
+package org.camp.used.board.dto;
 
 import java.time.LocalDateTime;
 

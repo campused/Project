@@ -1,4 +1,4 @@
-package org.camp.used.config;
+package org.camp.used.common.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-// Servlet.xml¿ª ¥ÎΩ≈
 @EnableWebMvc
 @ComponentScan(basePackages = { "org.camp.used.controller" })
 public class ServletConfig implements WebMvcConfigurer {
