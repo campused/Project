@@ -28,7 +28,7 @@ public class BoardMapperTests {
 				.bcontent("테스트 내용1")
 				.bprice("40억")
 				.bdeleted(false)
-				.memberMno(1L)
+				.memberMno(200L)
 				.build()
 				);
 	}
