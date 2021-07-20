@@ -42,7 +42,7 @@ public class MemberMapperTests {
 	@Test
 	public void testReadOne() {
 		log.info("===testReadOne Start!!===");
-		Optional<MemberGetOneDTO> result = memberMapper.selectOne(200L);
+		Optional<MemberGetOneDTO> result = memberMapper.selectOne(2L);
 		log.info(result);
 	}
 	
