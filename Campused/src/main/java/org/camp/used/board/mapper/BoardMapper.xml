@@ -14,7 +14,9 @@
  		<result property="bregdate" column="bregdate"/>
  		<result property="bmoddate" column="bmoddate"/>
  		<result property="member_mno" column="member_mno"/>
- 		<collection property="memberList" resultMap="memberMap"/>
+ 		<result property="totalCnt" column="totalCnt"/>
+ 		<result property="replyCnt" column="replyCnt"/>
+ 		<collection property="memberGetOneDTO" resultMap="memberMap"/>
  	</resultMap>
  	
  	 <resultMap type="org.camp.used.member.dto.MemberGetOneDTO" id="memberMap">
@@ -26,6 +28,26 @@
  		<result property="mlikecount" column="mlikecount"/>
  		<result property="mregdate" column="mregdate"/>
  		<result property="mmoddate" column="mmoddate"/>
+ 	</resultMap>
+ 	
+ 	 <resultMap type="org.camp.used.board.dto.BoardGetResDTO" id="getOneMap">
+ 		<id property="bno" column="bno"/>
+ 		<result property="bstate" column="bstate"/>
+ 		<result property="btitle" column="btitle"/>
+ 		<result property="bcontent" column="bcontent"/>
+ 		<result property="bprice" column="bprice"/>
+ 		<result property="bregdate" column="bregdate"/>
+ 		<result property="bmoddate" column="bmoddate"/>
+ 		<result property="member_mno" column="member_mno"/>
+ 		<collection property="memberGetOneDTO" resultMap="memberMap"/>
+ 		<collection property="ReplyResDTO" resultMap="replyMap"/>
+ 	</resultMap>
+ 	
+ 	 <resultMap type="org.camp.used.reply.dto.ReplyResDTO" id="replyMap">
+ 		<result property="rtext" column="rtext"/>
+ 		<result property="rdeleted" column="rdeleted"/>
+ 		<result property="rmoddate" column="rmoddate"/>
+ 		<result property="member_mno" column="member_mno"/>
  	</resultMap>
  
   	<sql id="search">
@@ -53,19 +75,23 @@
 		update tbl_board set bdeleted = true
 		where bno = #{bno}
 	</delete>
-	
-	<select id="getCount" resultType="int">
-  		select COUNT(b.bno) from tbl_board b left JOIN tbl_member m ON b.member_mno = m.mno 
-  		<include refid="search"></include>
-  		and b.bno > 0
-  	</select>
   	
   	<select id="getPageList" resultMap="searchMap">
-
-  		SELECT *, COUNT(b.bno) over () AS totalCnt FROM tbl_board b left JOIN tbl_member m ON b.member_mno = m.mno  
+		SELECT *, COUNT(b.bno) over () AS totalCnt, COUNT(r.board_bno) AS replyCnt
+		FROM tbl_board b 
+		LEFT JOIN tbl_member m ON b.member_mno = m.mno
+		INNER JOIN tbl_reply r ON b.bno = r.board_bno
   		where <include refid="search"></include> and b.bno > 0 
+  		GROUP BY r.board_bno
   		ORDER BY bno DESC LIMIT #{skip}, #{size}
-  		
+  	</select>
+  	
+  	<select id="getOne" resultMap="getOneMap">
+  		SELECT * FROM tbl_board b 
+		LEFT JOIN tbl_member m ON b.member_mno = m.mno
+		LEFT JOIN tbl_reply r ON b.bno = r.board_bno
+		WHERE b.bno = #{bno}
+		AND b.bno > 0
   	</select>
  
  </mapper>

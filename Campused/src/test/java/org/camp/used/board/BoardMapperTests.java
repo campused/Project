@@ -1,7 +1,12 @@
 package org.camp.used.board;
 
 import java.util.stream.IntStream;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'Jinseob' of https://github.com/campused/Project.git
 import org.camp.used.board.dto.BoardInsertDTO;
+import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
 import org.camp.used.board.mapper.BoardMapper;
 import org.camp.used.config.RootConfig;
@@ -52,23 +57,22 @@ public class BoardMapperTests {
 				.keyword("김밥")
 				.build();
 		
+		log.info(dto);
+		int totalCnt = boardMapper.getPageList(dto).get(0).getTotalCnt();
+		
 		boardMapper.getPageList(dto).forEach(boardMapper -> {
 			log.info(boardMapper);
 		});
+		
+		BoardPageResultDTO dtos = new BoardPageResultDTO(dto.getPage(), dto.getSize(), totalCnt);
+		log.info(dtos);
 	}
 	
 	@Test
-	public void testGetCount() {
-		BoardSearchRequestDTO dto = BoardSearchRequestDTO.builder()
-				.page(1)
-				.size(10)
-				.type("c")
-				.keyword("김밥")
-				.build();
-		
-		int result = boardMapper.getCount(dto);
-		log.info(result);
+	public void testBoardGetOne() {
+		log.info(boardMapper.getOne(2L));
 	}
+
 	
 
 }

@@ -28,7 +28,7 @@ public class MemberMapperTests {
 	@Test
 	public void testCreate() {
 		log.info("===testCreate Start!!===");
-		IntStream.rangeClosed(1, 101).forEach(member -> {
+		IntStream.rangeClosed(1, 400).forEach(member -> {
 			MemberInsertDTO dto = MemberInsertDTO.builder()
 			.memail("kiteho"+member+"@gmail.com")
 			.mnickname("testNickname"+member)
