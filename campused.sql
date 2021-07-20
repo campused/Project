@@ -1,14 +1,14 @@
 create table tbl_board (
        bno bigint not null auto_increment,
-   bstate bit not null,
-        btitle varchar(255) not null,
-        bcontent varchar(255) not null,
-        bprice varchar(255) not null,
-        bdeleted bit not null,
-        breg_date datetime(6),
-        bmod_date datetime(6),
-        member_mno bigint,
-        primary key (bno)
+   	 bstate bit not null,
+       btitle varchar(255) not null,
+       bcontent varchar(255) not null,
+       bprice varchar(255) not null,
+       bdeleted bit not null,
+       bregdate datetime(6),
+       bmoddate datetime(6),
+       member_mno bigint,
+       primary key (bno)
     );
         create table tbl_member (
        mno bigint not null auto_increment,
@@ -19,8 +19,8 @@ create table tbl_board (
         mphone varchar(255) not null,
         mauthority int not null,
         mlikecount bigint,
-        mreg_date datetime(6),
-        mmod_date datetime(6),
+        mregdate datetime(6),
+        mmoddate datetime(6),
         primary key (mno)
     );
     
@@ -30,8 +30,8 @@ create table tbl_board (
         rdeleted bit not null,
         board_bno bigint,
         member_mno bigint,
-        rmod_date datetime(6),
-        rreg_date datetime(6),
+        rmoddate datetime(6),
+        rregdate datetime(6),
         primary key (rno)
     );
     
@@ -40,8 +40,8 @@ create table tbl_board (
         fuuid varchar(255) not null,
         fname varchar(255) not null,
         fmain bit,
-        fmod_date datetime(6),
-        freg_date datetime(6),
+        fmoddate datetime(6),
+        fregdate datetime(6),
         board_bno bigint,
         primary key (fno)
     );
@@ -51,8 +51,8 @@ create table tbl_board (
        PRIMARY KEY (cno),
        member_mno BIGINT,
        board_bno BIGINT,
-       cmod_date datetime(6),
-       creg_date datetime(6)
+       cmoddate datetime(6),
+       cregdate datetime(6)
     );
     
     CREATE TABLE tbl_applylist (
@@ -60,11 +60,24 @@ create table tbl_board (
        PRIMARY KEY (ano),
        atext VARCHAR(255) NOT NULL,
        astate INT NOT NULL,
-       amod_date datetime(6),
-      areg_date datetime(6),
-      member_mno BIGINT,
+       amoddate datetime(6),
+       aregdate datetime(6),
+       member_mno BIGINT,
        board_bno BIGINT
     );
+    
+    DROP TABLE tbl_reply;
+    
+    DROP TABLE tbl_file;
+    
+    DROP TABLE tbl_cartlist;
+    
+    DROP TABLE tbl_applylist;
+    
+    DROP TABLE tbl_board;
+    
+    DROP TABLE tbl_member;
+    
     
         alter table tbl_board 
        add constraint FKd2pummh7bq5j5fgegxvajahq 
@@ -105,3 +118,7 @@ create table tbl_board (
        ADD constraint
       FOREIGN KEY (board_bno)
        REFERENCES tbl_board (bno);
+       
+      TRUNCATE tbl_member;
+      
+      SELECT * FROM tbl_member WHERE mno = 200;

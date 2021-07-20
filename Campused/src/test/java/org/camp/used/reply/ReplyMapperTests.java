@@ -2,7 +2,7 @@ package org.camp.used.reply;
 
 import java.util.stream.IntStream;
 
-import org.camp.used.common.config.RootConfig;
+import org.camp.used.config.RootConfig;
 import org.camp.used.reply.dto.ReplyInsertDTO;
 import org.camp.used.reply.mapper.ReplyMapper;
 import org.junit.Test;
