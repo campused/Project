@@ -7,11 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MemberGetOneDTO {
+public class MemberDTO {
+	
 	private String memail;
 	private String mnickname;
 	private String mpw;
@@ -21,4 +23,5 @@ public class MemberGetOneDTO {
 	private Long mlikecount;
 	private LocalDateTime mregdate;
 	private LocalDateTime mmoddate;
+
 }

@@ -3,8 +3,10 @@ package org.camp.used.member;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import org.camp.used.common.config.RootConfig;
+import org.camp.used.member.dto.MemberDeleteDTO;
 import org.camp.used.member.dto.MemberGetOneDTO;
 import org.camp.used.member.dto.MemberInsertDTO;
+import org.camp.used.member.dto.MemberUpdateDTO;
 import org.camp.used.member.mapper.MemberMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +36,7 @@ public class MemberMapperTests {
 			.mphone("010-1234-8962"+member)
 			.mauthority(1)
 			.mlikecount(100L)
+			.mdeleted(false)
 			.build();
 			memberMapper.insert(dto);
 		});
@@ -42,15 +45,66 @@ public class MemberMapperTests {
 	@Test
 	public void testReadOne() {
 		log.info("===testReadOne Start!!===");
-		Optional<MemberGetOneDTO> result = memberMapper.selectOne(2L);
+		Optional<MemberGetOneDTO> result = memberMapper.selectOne(4L);
 		log.info(result);
 	}
 	
+	// select를 제외한 insert update delete는 리턴값이 1(성공) 아니면 0(실패)
 	@Test
 	public void testUpdate() {
 		log.info("===testUpdate Start!!===");
+		MemberUpdateDTO dto = new MemberUpdateDTO();
+		dto.setMno(4L);
+		dto.setMnickname("테스트 닉네임");
+		dto.setMpw("2222");
+		dto.setMaddress("을지로3가");
+		dto.setMphone("010-9876-4321");
+		dto.setMauthority(2);
+		int check = memberMapper.update(dto);
+		if(check == 1) {
+			log.info("===success===");
+		}
+	}
+	
+	@Test
+	public void testDelete() {
+		log.info("===testDelete Start!!===");
+		MemberDeleteDTO dto = new MemberDeleteDTO();
+		dto.setMno(4L);
+		dto.setMdeleted(true);
+		int check = memberMapper.delete(dto);
+		if(check ==1) {
+			log.info("===success===");
+		}
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
