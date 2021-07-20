@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="org.camp.used.board.mapper.BoardMapper">
  
- 	<resultMap type="org.camp.used.board.BoardSearchResDTO" id="searchMap">
+ 	<resultMap type="org.camp.used.board.dto.BoardSearchResDTO" id="searchMap">
  		<id property="bno" column="bno"/>
  		<result property="bstate" column="bstate"/>
  		<result property="bdeleted" column="bdeleted"/>
@@ -17,7 +17,7 @@
  		<collection property="memberList" resultMap="memberMap"/>
  	</resultMap>
  	
- 	 <resultMap type="org.camp.member.dto.MemberGetOneDTO" id="memberMap">
+ 	 <resultMap type="org.camp.used.member.dto.MemberGetOneDTO" id="memberMap">
  		<result property="memail" column="memail"/>
  		<result property="mnickname" column="mnickname"/>
  		<result property="maddress" column="maddress"/>

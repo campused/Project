@@ -1,4 +1,4 @@
-package org.camp.used.common.config;
+package org.camp.used.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -9,7 +9,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class[] {RootConfig.class};
+		return new Class[] {RootConfig.class, SecurityConfig.class};
 	}
 
 	@Override

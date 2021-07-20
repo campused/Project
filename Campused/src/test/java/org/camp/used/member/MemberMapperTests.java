@@ -2,7 +2,8 @@ package org.camp.used.member;
 
 import java.util.Optional;
 import java.util.stream.IntStream;
-import org.camp.used.common.config.RootConfig;
+
+import org.camp.used.config.RootConfig;
 import org.camp.used.member.dto.MemberDeleteDTO;
 import org.camp.used.member.dto.MemberGetOneDTO;
 import org.camp.used.member.dto.MemberInsertDTO;

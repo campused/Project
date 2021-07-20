@@ -1,12 +1,10 @@
 package org.camp.used.board;
 
 import java.util.stream.IntStream;
-
-import org.camp.used.board.dto.BoardDeleteDTO;
 import org.camp.used.board.dto.BoardInsertDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
 import org.camp.used.board.mapper.BoardMapper;
-import org.camp.used.common.config.RootConfig;
+import org.camp.used.config.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
