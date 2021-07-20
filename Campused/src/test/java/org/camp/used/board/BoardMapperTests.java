@@ -1,10 +1,6 @@
 package org.camp.used.board;
 
 import java.util.stream.IntStream;
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'Jinseob' of https://github.com/campused/Project.git
 import org.camp.used.board.dto.BoardInsertDTO;
 import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
