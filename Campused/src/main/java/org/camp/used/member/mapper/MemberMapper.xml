@@ -2,14 +2,41 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="org.camp.used.member.mapper.MemberMapper">
-  	<insert id="insert"> 
-		insert into tbl_member (memail, mnickname, mpw, maddress, mphone, mauthority, mlikecount, mregdate, mmoddate)
-		values (#{memail}, #{mnickname}, #{mpw}, #{maddress}, #{mphone}, #{mauthority}, #{mlikecount}, now(), now())
+
+<mapper namespace="org.camp.used.member.mapper.MemberMapper">
+	<insert id="insert">
+		insert into tbl_member (memail, mnickname, mpw,
+		maddress, mphone,
+		mauthority, mlikecount, mdeleted, mregdate, mmoddate)
+		values
+		(#{memail},
+		#{mnickname}, #{mpw}, #{maddress}, #{mphone},
+		#{mauthority},
+		#{mlikecount}, #{mdeleted}, now(), now())
 	</insert>
-	
-	<select id="selectOne" resultType="org.camp.used.member.dto.MemberGetOneDTO">
-		 SELECT * FROM tbl_member WHERE mno = #{mno}
+
+	<select id="selectOne"
+		resultType="org.camp.used.member.dto.MemberGetOneDTO">
+		SELECT * FROM tbl_member WHERE mno = #{mno}
 	</select>
-  </mapper>
+
+	<update id="update">
+		update tbl_member set
+		mnickname = #{mnickname},
+		mpw =
+		#{mpw},
+		maddress = #{maddress},
+		mphone = #{mphone},
+		mauthority =
+		#{mauthority}
+		where mno = #{mno}
+	</update>
+	
+	<update id="delete">
+		update tbl_member set
+		mdeleted = #{mdeleted}
+		where mno = #{mno}
+	</update>
+	
+
+</mapper>
