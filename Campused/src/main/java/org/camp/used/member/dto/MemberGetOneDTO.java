@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class MemberGetOneDTO {
 	private String memail;
 	private String mnickname;
-	private String mpw;
 	private String maddress;
 	private String mphone;
 	private int mauthority;
