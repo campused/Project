@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 
 @Configuration
 @Log4j
-@MapperScan(basePackages = {"org.camp.used.member.mapper", "org.camp.used.board.mapper"})
+@MapperScan(basePackages = {"org.camp.used.member.mapper", "org.camp.used.board.mapper", "org.camp.used.reply.mapper"})
 @ComponentScan(basePackages = {"org.camp.used.service", "org.camp.used.aop"})
 @EnableAspectJAutoProxy 
 @EnableTransactionManagement

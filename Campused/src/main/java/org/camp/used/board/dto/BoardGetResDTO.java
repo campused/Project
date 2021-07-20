@@ -1,26 +1,30 @@
 package org.camp.used.board.dto;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
+import org.camp.used.board.dto.BoardInsertDTO.BoardInsertDTOBuilder;
 import org.camp.used.member.dto.MemberGetOneDTO;
+import org.camp.used.reply.dto.ReplyResDTO;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class BoardSearchResDTO {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class BoardGetResDTO {
 
 	private Long bno;
-	private boolean bstate, bdeleted;
+	private boolean bstate;
 	private String btitle, bcontent, bprice;
 	private LocalDateTime bregdate, bmoddate;
 	private Long member_mno;
-	private int totalCnt;
-	private int replyCnt;
 	
 	private MemberGetOneDTO memberGetOneDTO;
+	
+	private ReplyResDTO replyResDTO;
 	
 }

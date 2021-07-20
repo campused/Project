@@ -22,8 +22,10 @@ public class BoardPageResultDTO {
 
         int totalPage = (int) (Math.ceil(totalCount/(double)size));
         int tempEnd = (int) (Math.ceil(page/10.0) * 10);
-        int start = tempEnd - 9;
-        int end = totalPage > tempEnd ? tempEnd : totalPage;
+        
+        this.start = tempEnd - 9;
+        this.end = totalPage > tempEnd ? tempEnd : totalPage;
+        
         prev = start > 1;
         next = totalPage > tempEnd;
         pageNumList = IntStream.rangeClosed(start, end).boxed().collect(Collectors.toList());
