@@ -4,9 +4,94 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="org.camp.used.board.mapper.BoardMapper">
  
+ 	<resultMap type="org.camp.used.board.dto.BoardSearchResDTO" id="searchMap">
+ 		<id property="bno" column="bno"/>
+ 		<result property="bstate" column="bstate"/>
+ 		<result property="bdeleted" column="bdeleted"/>
+ 		<result property="btitle" column="btitle"/>
+ 		<result property="bcontent" column="bcontent"/>
+ 		<result property="bprice" column="bprice"/>
+ 		<result property="bregdate" column="bregdate"/>
+ 		<result property="bmoddate" column="bmoddate"/>
+ 		<result property="member_mno" column="member_mno"/>
+ 		<result property="totalCnt" column="totalCnt"/>
+ 		<result property="replyCnt" column="replyCnt"/>
+ 		<collection property="memberGetOneDTO" resultMap="memberMap"/>
+ 	</resultMap>
+ 	
+ 	 <resultMap type="org.camp.used.member.dto.MemberGetOneDTO" id="memberMap">
+ 		<result property="memail" column="memail"/>
+ 		<result property="mnickname" column="mnickname"/>
+ 		<result property="maddress" column="maddress"/>
+ 		<result property="mphone" column="mphone"/>
+ 		<result property="mauthority" column="mauthority"/>
+ 		<result property="mlikecount" column="mlikecount"/>
+ 		<result property="mregdate" column="mregdate"/>
+ 		<result property="mmoddate" column="mmoddate"/>
+ 	</resultMap>
+ 	
+ 	 <resultMap type="org.camp.used.board.dto.BoardGetResDTO" id="getOneMap">
+ 		<id property="bno" column="bno"/>
+ 		<result property="bstate" column="bstate"/>
+ 		<result property="btitle" column="btitle"/>
+ 		<result property="bcontent" column="bcontent"/>
+ 		<result property="bprice" column="bprice"/>
+ 		<result property="bregdate" column="bregdate"/>
+ 		<result property="bmoddate" column="bmoddate"/>
+ 		<result property="member_mno" column="member_mno"/>
+ 		<collection property="memberGetOneDTO" resultMap="memberMap"/>
+ 		<collection property="ReplyResDTO" resultMap="replyMap"/>
+ 	</resultMap>
+ 	
+ 	 <resultMap type="org.camp.used.reply.dto.ReplyResDTO" id="replyMap">
+ 		<result property="rtext" column="rtext"/>
+ 		<result property="rdeleted" column="rdeleted"/>
+ 		<result property="rmoddate" column="rmoddate"/>
+ 		<result property="member_mno" column="member_mno"/>
+ 	</resultMap>
+ 
+  	<sql id="search">
+  		<if test="arr != null">
+  			<foreach item="tp" collection="arr" separator="OR" open="(" close=")">
+  				<if test="tp == 't'.toString()">
+					b.btitle like concat('%', #{keyword},'%') 	  				
+  				</if>
+  				<if test="tp == 'c'.toString()">
+					b.bcontent like concat('%', #{keyword},'%')				
+  				</if>
+  				<if test="tp == 'w'.toString()">
+					m.mnickname like concat('%', #{keyword},'%') 
+  				</if>
+  			</foreach>
+  		</if>
+  	</sql>
+
 	<insert id="insert"> 
 		insert into tbl_board (bstate, btitle, bcontent, bprice, bdeleted, bregdate, bmoddate, member_mno)
 		values (#{bstate}, #{btitle}, #{bcontent}, #{bprice}, #{bdeleted}, now(), now(), #{memberMno})
 	</insert>
+	
+	<delete id="delete">
+		update tbl_board set bdeleted = true
+		where bno = #{bno}
+	</delete>
+  	
+  	<select id="getPageList" resultMap="searchMap">
+		SELECT *, COUNT(b.bno) over () AS totalCnt, COUNT(r.board_bno) AS replyCnt
+		FROM tbl_board b 
+		LEFT JOIN tbl_member m ON b.member_mno = m.mno
+		INNER JOIN tbl_reply r ON b.bno = r.board_bno
+  		where <include refid="search"></include> and b.bno > 0 
+  		GROUP BY r.board_bno
+  		ORDER BY bno DESC LIMIT #{skip}, #{size}
+  	</select>
+  	
+  	<select id="getOne" resultMap="getOneMap">
+  		SELECT * FROM tbl_board b 
+		LEFT JOIN tbl_member m ON b.member_mno = m.mno
+		LEFT JOIN tbl_reply r ON b.bno = r.board_bno
+		WHERE b.bno = #{bno}
+		AND b.bno > 0
+  	</select>
  
  </mapper>

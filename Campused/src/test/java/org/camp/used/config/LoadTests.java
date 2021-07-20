@@ -3,8 +3,6 @@ package org.camp.used.config;
 import java.sql.Connection;
 
 import javax.sql.DataSource;
-
-import org.camp.used.common.config.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

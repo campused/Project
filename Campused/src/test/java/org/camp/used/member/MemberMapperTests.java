@@ -2,7 +2,8 @@ package org.camp.used.member;
 
 import java.util.Optional;
 import java.util.stream.IntStream;
-import org.camp.used.common.config.RootConfig;
+
+import org.camp.used.config.RootConfig;
 import org.camp.used.member.dto.MemberDeleteDTO;
 import org.camp.used.member.dto.MemberGetOneDTO;
 import org.camp.used.member.dto.MemberInsertDTO;
@@ -27,7 +28,7 @@ public class MemberMapperTests {
 	@Test
 	public void testCreate() {
 		log.info("===testCreate Start!!===");
-		IntStream.rangeClosed(1, 101).forEach(member -> {
+		IntStream.rangeClosed(1, 400).forEach(member -> {
 			MemberInsertDTO dto = MemberInsertDTO.builder()
 			.memail("kiteho"+member+"@gmail.com")
 			.mnickname("testNickname"+member)

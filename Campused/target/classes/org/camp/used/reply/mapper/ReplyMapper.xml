@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="org.camp.used.reply.mapper.ReplyMapper">
+ 
+ 	<insert id="replyInsert">
+ 		INSERT INTO tbl_reply (rtext, rdeleted, rregdate, rmoddate, board_bno, member_mno)
+ 		VALUES (#{rtext}, #{rdeleted}, now(), now(), #{boardBno}, #{memberMno})
+ 	</insert>
+ 
+ </mapper>
