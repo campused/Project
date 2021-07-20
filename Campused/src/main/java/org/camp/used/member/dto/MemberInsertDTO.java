@@ -22,7 +22,7 @@ public class MemberInsertDTO {
 	private String mphone;
 	private int mauthority;
 	private Long mlikecount;
-	private LocalDateTime mregDate;
-	private LocalDateTime mmodDate;
+	private LocalDateTime mregdate;
+	private LocalDateTime mmoddate;
 	
 }
