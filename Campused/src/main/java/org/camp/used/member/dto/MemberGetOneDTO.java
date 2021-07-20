@@ -12,16 +12,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberGetOneDTO {
-	
 	private String memail;
 	private String mnickname;
-	private String mpw;
 	private String maddress;
 	private String mphone;
 	private int mauthority;
 	private Long mlikecount;
 	private LocalDateTime mregdate;
 	private LocalDateTime mmoddate;
-	
-	
 }

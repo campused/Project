@@ -20,7 +20,6 @@
  	 <resultMap type="org.camp.member.dto.MemberGetOneDTO" id="memberMap">
  		<result property="memail" column="memail"/>
  		<result property="mnickname" column="mnickname"/>
- 		<result property="mpw" column="mpw"/>
  		<result property="maddress" column="maddress"/>
  		<result property="mphone" column="mphone"/>
  		<result property="mauthority" column="mauthority"/>
