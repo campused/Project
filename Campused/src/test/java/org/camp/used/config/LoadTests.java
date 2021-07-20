@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import javax.sql.DataSource;
 
+import org.camp.used.common.config.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class LoadTests {
 	private DataSource ds;
 
 	
-	@Test // DB �׽�Ʈ
+	@Test // DB 테스트
 	public void testDs() {
 		log.info(ds);
 		try(Connection con = ds.getConnection()) {

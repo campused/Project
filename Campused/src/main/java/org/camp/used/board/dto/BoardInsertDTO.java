@@ -1,4 +1,4 @@
-package org.camp.used.dto;
+package org.camp.used.board.dto;
 
 import java.time.LocalDateTime;
 
@@ -18,8 +18,8 @@ public class BoardInsertDTO {
 	private String bcontent;
 	private String bprice;
 	private boolean bdeleted;
-	private LocalDateTime bregDate;
-	private LocalDateTime bmodDate;
+	private LocalDateTime bregdate;
+	private LocalDateTime bmoddate;
 	private Long memberMno;
 	
 }

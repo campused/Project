@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.camp.used.member.mapper.MemberMapper">
+  	<insert id="insert"> 
+		insert into tbl_member (memail, mnickname, mpw, maddress, mphone, mauthority, mlikecount, mregdate, mmoddate)
+		values (#{memail}, #{mnickname}, #{mpw}, #{maddress}, #{mphone}, #{mauthority}, #{mlikecount}, now(), now())
+	</insert>
+	
+	<select id="selectOne" resultType="org.camp.used.member.dto.MemberGetOneDTO">
+		 SELECT * FROM tbl_member WHERE mno = #{mno}
+	</select>
+  </mapper>

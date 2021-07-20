@@ -1,9 +1,8 @@
-package org.camp.used.config;
+package org.camp.used.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-// web.xml¿ª ¥ÎΩ≈
 @Configuration
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 

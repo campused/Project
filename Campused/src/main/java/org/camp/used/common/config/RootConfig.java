@@ -1,4 +1,4 @@
-package org.camp.used.config;
+package org.camp.used.common.config;
 
 import javax.sql.DataSource;
 
@@ -15,14 +15,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
 
 @Configuration
 @Log4j
-@MapperScan(basePackages = {"org.camp.used.mapper"})
+@MapperScan(basePackages = {"org.camp.used.member.mapper", "org.camp.used.board.mapper"})
 @ComponentScan(basePackages = {"org.camp.used.service", "org.camp.used.aop"})
-@EnableAspectJAutoProxy // AOP 할수있음
+@EnableAspectJAutoProxy 
 @EnableTransactionManagement
 public class RootConfig {
 	static {
