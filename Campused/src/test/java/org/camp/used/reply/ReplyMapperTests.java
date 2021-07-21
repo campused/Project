@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 
 import org.camp.used.config.RootConfig;
 import org.camp.used.reply.dto.ReplyInsertDTO;
+import org.camp.used.reply.dto.ReplyUpdateDTO;
 import org.camp.used.reply.mapper.ReplyMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +35,20 @@ public class ReplyMapperTests {
 					.build()
 					);
 		});
+	}
+	
+	@Test
+	public void testReplyDelete() {
+		replyMapper.replyDelete(2L);
+	}
+	
+	@Test
+	public void testReplyUpdate() {
+		ReplyUpdateDTO dto = ReplyUpdateDTO.builder()
+				.rno(2L)
+				.rtext("수정테스트용1")
+				.build();
+		replyMapper.replyUpdate(dto);
 	}
 
 }
