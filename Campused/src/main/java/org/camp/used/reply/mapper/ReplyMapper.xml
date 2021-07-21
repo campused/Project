@@ -8,5 +8,19 @@
  		INSERT INTO tbl_reply (rtext, rdeleted, rregdate, rmoddate, board_bno, member_mno)
  		VALUES (#{rtext}, #{rdeleted}, now(), now(), #{boardBno}, #{memberMno})
  	</insert>
+ 	
+ 	<delete id="replyDelete">
+ 		UPDATE tbl_reply
+		SET rdeleted = TRUE
+		WHERE rno = #{rno}
+		AND rno > 0
+ 	</delete>
+ 	
+ 	<update id="replyUpdate">
+	 	UPDATE tbl_reply
+		SET rtext = #{rtext}, rmoddate = now()
+		WHERE rno = #{rno}
+		and rno > 0
+ 	</update>
  
  </mapper>

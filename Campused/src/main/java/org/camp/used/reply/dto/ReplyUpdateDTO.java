@@ -11,15 +11,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReplyResDTO {
+public class ReplyUpdateDTO {
 	
 	private Long rno;
 	
 	private String rtext;
-	
-	private boolean rdeleted;
-	
-	private Long memberMno;
 	
 	private LocalDateTime rmoddate;
 

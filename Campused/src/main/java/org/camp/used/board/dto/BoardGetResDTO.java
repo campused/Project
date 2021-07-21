@@ -1,6 +1,7 @@
 package org.camp.used.board.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.camp.used.board.dto.BoardInsertDTO.BoardInsertDTOBuilder;
 import org.camp.used.member.dto.MemberGetOneDTO;
@@ -21,10 +22,9 @@ public class BoardGetResDTO {
 	private boolean bstate;
 	private String btitle, bcontent, bprice;
 	private LocalDateTime bregdate, bmoddate;
-	private Long member_mno;
 	
 	private MemberGetOneDTO memberGetOneDTO;
 	
-	private ReplyResDTO replyResDTO;
+	private List<ReplyResDTO> ReplyResDTO;
 	
 }
