@@ -15,8 +15,7 @@
 		#{mlikecount}, #{mdeleted}, now(), now())
 	</insert>
 
-	<select id="selectOne_"
-		resultType="org.camp.used.member.dto.MemberGetOneDTO">
+	<select id="selectOne_" resultType="org.camp.used.member.dto.MemberGetOneDTO">
 		SELECT * FROM tbl_member WHERE mno = #{mno}
 	</select>
 
