@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="org.camp.used.cart.mapper.CartMapper">
+ 
+  	<resultMap type="org.camp.used.cart.dto.CartGetResDTO" id="cartGetMap">
+ 		<id property="cno" column="cno"/>
+ 		<result property="cartMno" column="cartMno"/>
+ 		<collection property="BoardCartResDTO" resultMap="boardCartResMap"/>
+ 	</resultMap>
+ 	
+ 	<resultMap type="org.camp.used.board.dto.BoardCartResDTO" id="boardCartResMap">
+	 	<result property="bno" column="bno"/>
+ 		<result property="member_mno" column="member_mno"/>
+ 		<result property="bstate" column="bstate"/>
+ 		<result property="btitle" column="btitle"/>
+ 		<result property="bcontent" column="bcontent"/>
+ 		<result property="bprice" column="bprice"/>
+ 	</resultMap>
+ 	
+ 
+ 	<insert id="cartInsert">
+ 		INSERT INTO tbl_cartlist (member_mno, board_bno, cregdate, cmoddate)
+		VALUES (#{member_mno}, #{board_bno}, now(), now())
+ 	</insert>
+ 	
+ 	<delete id="cartDelete">
+ 		DELETE from tbl_cartlist 
+ 		WHERE cno = #{cno}
+ 	</delete>
+ 	
+ 	<select id="cartGet" resultMap="cartGetMap">
+		SELECT 
+		c.cno, 
+		c.member_mno AS cartMno,
+		b.*  
+		FROM tbl_cartlist c
+		LEFT JOIN tbl_board b ON c.board_bno = b.bno
+		WHERE c.member_mno = #{mno}
+		AND cno > 0
+ 	</select>
+ 
+ </mapper>
+ 

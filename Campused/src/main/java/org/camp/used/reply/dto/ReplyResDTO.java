@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReplyResDTO {
 	
+	private Long rno;
+	
 	private String rtext;
 	
 	private boolean rdeleted;
 	
-	private LocalDateTime rmoddate;
-	
 	private Long memberMno;
+	
+	private LocalDateTime rmoddate;
 
 }

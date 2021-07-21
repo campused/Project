@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 import org.camp.used.board.dto.BoardInsertDTO;
 import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
+import org.camp.used.board.dto.BoardUpdateRequestDTO;
 import org.camp.used.board.mapper.BoardMapper;
 import org.camp.used.config.RootConfig;
 import org.junit.Test;
@@ -49,8 +50,8 @@ public class BoardMapperTests {
 		BoardSearchRequestDTO dto = BoardSearchRequestDTO.builder()
 				.page(1)
 				.size(10)
-				.type("c")
-				.keyword("김밥")
+				.type("")
+				.keyword("")
 				.build();
 		
 		log.info(dto);
@@ -66,7 +67,21 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testBoardGetOne() {
-		log.info(boardMapper.getOne(2L));
+		log.info(boardMapper.getOne(12L));
+	}
+	
+	@Test
+	public void testBoardUpdate() {
+		BoardUpdateRequestDTO dto = BoardUpdateRequestDTO.builder()
+		.bno(12L)
+		.btitle("수정테스트1")
+		.bcontent("수정내용테스트1")
+		.bdeleted(true)
+		.bprice("20억")
+		.build();
+		
+		log.info(boardMapper.update(dto));
+		
 	}
 
 	
