@@ -13,8 +13,6 @@ import org.camp.used.board.dto.BoardUpdateRequestDTO;
 import org.camp.used.board.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import jdk.internal.org.jline.utils.Log;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
