@@ -41,7 +41,7 @@ public class CartMapperTests {
 	
 	@Test
 	public void cartSelectTest() {
-		log.info(cartMapper.cartGet(3L));
+		log.info(cartMapper.cartGet(2L));
 	}
 
 }

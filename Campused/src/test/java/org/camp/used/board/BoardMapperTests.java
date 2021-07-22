@@ -53,8 +53,7 @@ public class BoardMapperTests {
 				.type("")
 				.keyword("")
 				.build();
-		
-		log.info(dto);
+	
 		int totalCnt = boardMapper.getPageList(dto).get(0).getTotalCnt();
 		
 		boardMapper.getPageList(dto).forEach(boardMapper -> {
