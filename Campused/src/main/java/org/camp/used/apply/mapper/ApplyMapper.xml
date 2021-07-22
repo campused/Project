@@ -4,5 +4,64 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="org.camp.used.apply.mapper.ApplyMapper">
  
+  	<resultMap type="org.camp.used.apply.dto.ApplyGetResDTO" id="applyGetListMap">
+ 		<id property="ano" column="ano"/>
+ 		<result property="atext" column="atext"/>
+ 		<result property="astate" column="astate"/>
+ 		<result property="adeleted" column="adeleted"/>
+ 		<result property="amoddate" column="amoddate"/>
+ 		<collection property="BoardApplyResDTO" resultMap="boardApplyResMap"/>
+ 	</resultMap>
+ 	
+ 	<resultMap type="org.camp.used.board.dto.BoardApplyResDTO" id="boardApplyResMap">
+	 	<result property="bno" column="bno"/>
+ 		<result property="bstate" column="bstate"/>
+ 		<result property="bdeleted" column="bdeleted"/>
+ 		<result property="btitle" column="btitle"/>
+ 		<result property="bcontent" column="bcontent"/>
+ 		<result property="bprice" column="bprice"/>
+ 	</resultMap>
+ 	
+ <insert id="applyInsert">
+ 	INSERT INTO tbl_applylist (atext, astate, adeleted, amoddate, aregdate, member_mno, board_bno)
+ 	VALUES (#{atext}, #{astate}, #{adeleted}, now(), now(), #{member_mno}, #{board_bno})	 
+ </insert>
+ 
+ <delete id="applyDelete">
+	update tbl_applylist set adeleted = true
+	where ano = #{ano}
+	and ano > 0
+ </delete>
+ 
+ <select id="applyGetList" resultMap="applyGetListMap">
+	SELECT 
+		ano, atext, astate, adeleted, amoddate,
+		bno, bstate, btitle, bcontent, bprice, bdeleted, bmoddate
+	FROM tbl_applylist a
+	LEFT JOIN tbl_board b ON a.board_bno = b.bno
+	WHERE a.member_mno = #{mno}
+	AND adeleted != 1 
+	AND a.member_mno > 0
+	GROUP BY bno
+	ORDER BY ano DESC
+ </select>
+ 
+ <update id="applyStateUpdate">
+ 	UPDATE tbl_applylist 
+	SET astate = #{astate}
+	WHERE ano = #{ano}
+	AND ano > 0
+ </update>
+ 
+ <select id="applyGetMyList" resultMap="applyGetListMap">
+	SELECT 
+		ano, atext, astate, adeleted, amoddate,
+		bno, bstate, btitle, bcontent, bprice, bdeleted, bmoddate
+	FROM tbl_applylist a
+	LEFT JOIN tbl_board b ON a.board_bno = b.bno 
+	WHERE b.member_mno = #{mno}
+	AND adeleted != 1 
+	AND a.member_mno > 0
+ </select>
  
  </mapper>
