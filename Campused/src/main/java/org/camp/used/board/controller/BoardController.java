@@ -35,6 +35,13 @@ public class BoardController {
 
 	@PostMapping("/insert")
 	public ResponseEntity<String> boardInsert(@RequestBody BoardInsertDTO dto) {
+		log.info("======================");
+		if(dto.getAttachList() != null) {
+			dto.getAttachList().forEach(list -> {
+				log.info(list);
+			});
+		}
+		log.info("======================");
 		boardService.insert(dto);
 		return ResponseEntity.ok("입력 완료");
 	}
@@ -61,7 +68,6 @@ public class BoardController {
 	@ResponseBody
 	public ResponseEntity<Map<List<BoardSearchResDTO>, BoardPageResultDTO>> boardGetList(@RequestBody BoardSearchRequestDTO dto) {
 		Map<List<BoardSearchResDTO>, BoardPageResultDTO> map = boardService.getPageList(dto);
-
 		return ResponseEntity.ok(map);
 	}
 	

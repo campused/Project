@@ -18,7 +18,7 @@ public interface BoardService {
 	
 	BoardGetResDTO getOne(Long bno);
 	
-	Long update(BoardUpdateRequestDTO dto);
-	
 	Map<List<BoardSearchResDTO>, BoardPageResultDTO> getPageList(BoardSearchRequestDTO dto);
+	
+	Long update(BoardUpdateRequestDTO dto);
 }

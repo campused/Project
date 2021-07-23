@@ -1,11 +1,9 @@
 package org.camp.used.file.dto;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
-public class FileInsertDTO {
+public class FileResDTO {
 
 	private String fuuid;
 	private String fuploadpath;

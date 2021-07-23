@@ -5,13 +5,13 @@ import lombok.Data;
 
 @Data
 @Builder
-public class FileInsertDTO {
-
+public class FileTestInsertDTO {
+	
 	private String fuuid;
-	private String fuploadpath;
 	private String fname;
+	private String fuploadpath;
 	private boolean ftype;
 	private boolean fmain;
 	private Long board_bno;
-	
+
 }

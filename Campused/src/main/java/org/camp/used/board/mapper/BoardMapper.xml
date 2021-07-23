@@ -50,6 +50,15 @@
  		<result property="rmoddate" column="rmoddate"/>
  	</resultMap>
  	
+ 	<resultMap type="org.camp.used.file.dto.FileResDTO" id="fileMap">
+ 		<result property="fuuid" column="fuuid"/>
+ 		<result property="fname" column="fname"/>
+ 		<result property="fuploadpath" column="fuploadpath"/>
+ 		<result property="ftype" column="ftype"/>
+ 		<result property="fmain" column="fmain"/>
+ 		<result property="board_bno" column="board_bno"/>
+ 	</resultMap>
+ 	
   	<sql id="search">
   		<if test="arr != null">
   			<foreach item="tp" collection="arr" separator="OR" open="(" close=")">
@@ -79,14 +88,24 @@
 		where bno = #{bno}
 	</delete>
   	
-  	<select id="getPageList" resultMap="searchMap">
-		SELECT *, COUNT(b.bno) over () AS totalCnt, COUNT(r.board_bno) AS replyCnt
-		FROM tbl_board b 
-		LEFT JOIN tbl_member m ON b.member_mno = m.mno
-		INNER JOIN tbl_reply r ON b.bno = r.board_bno
-  		where <include refid="search"></include> and b.bno > 0 
-  		GROUP BY r.board_bno
-  		ORDER BY bno DESC LIMIT #{skip}, #{size}
+  	<select id="getPageList" resultType="org.camp.used.board.dto.BoardSearchResDTO">
+		SELECT 
+		  b.bno, b.bstate, b.bdeleted, b.btitle, b.bcontent, b.bprice, b.bmoddate, m.mnickname, m.mno,
+		  COUNT(b.bno) AS totalCnt, 
+		  COUNT(r.board_bno) AS replyCnt,
+		  f.fname, f.fuuid, f.fuploadpath, f.ftype
+		FROM tbl_board b  
+		LEFT OUTER JOIN tbl_member m ON b.member_mno = m.mno
+		LEFT OUTER JOIN tbl_reply r ON b.bno = r.board_bno
+		LEFT OUTER JOIN tbl_file f ON b.bno = f.board_bno 
+		and f.fmain = true
+  		where <include refid="search"></include> and b.bno > 0
+  		GROUP BY b.bno, f.board_bno
+  		ORDER BY b.bno desc LIMIT #{skip}, #{size}
+  	</select>
+  	
+  	<select id="getAllCount" resultType="org.camp.used.board.dto.BoardTotalCountDTO">
+  		SELECT COUNT(*) as totalCount FROM tbl_board
   	</select>
   	
   	<select id="getOne" resultMap="getOneMap">

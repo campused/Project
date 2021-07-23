@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.camp.used.member.mapper.MemberMapper">
-	<insert id="insert_">
+	<insert id="insertMember">
 		insert into tbl_member (memail, mnickname, mpw,
 		maddress, mphone,
 		mauthority, mlikecount, mdeleted, mregdate, mmoddate)
@@ -15,11 +15,11 @@
 		#{mlikecount}, #{mdeleted}, now(), now())
 	</insert>
 
-	<select id="selectOne_" resultType="org.camp.used.member.dto.MemberGetOneDTO">
+	<select id="selectOneMember" resultType="org.camp.used.member.dto.MemberGetOneDTO">
 		SELECT * FROM tbl_member WHERE mno = #{mno}
 	</select>
 
-	<update id="update_">
+	<update id="updateMember">
 		update tbl_member set
 		mnickname = #{mnickname},
 		mpw =
@@ -31,7 +31,7 @@
 		where mno = #{mno}
 	</update>
 	
-	<update id="delete_">
+	<update id="deleteMember">
 		update tbl_member set
 		mdeleted = #{mdeleted}
 		where mno = #{mno}
