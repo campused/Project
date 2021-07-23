@@ -34,7 +34,7 @@ public class FileMapperTests {
 					.fuploadpath("테스트용 업로드 경로")
 					.ftype(false)
 					.fmain(false)
-					.board_bno(2L)
+					.board_bno(1L)
 					.build();
 			fileMapper.testInsertFile(testDTO);
 		});
