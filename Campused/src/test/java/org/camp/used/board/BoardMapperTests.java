@@ -26,7 +26,7 @@ public class BoardMapperTests {
 	@Test
 	public void testInsert() {
 		log.info("testInsert");
-		IntStream.rangeClosed(1, 100).forEach(i -> {
+		IntStream.rangeClosed(1, 400).forEach(i -> {
 			boardMapper.insert(
 					BoardInsertDTO.builder()
 					.btitle("테스트 제목"+i)
@@ -53,8 +53,7 @@ public class BoardMapperTests {
 				.type("")
 				.keyword("")
 				.build();
-		
-		log.info(dto);
+	
 		int totalCnt = boardMapper.getPageList(dto).get(0).getTotalCnt();
 		
 		boardMapper.getPageList(dto).forEach(boardMapper -> {

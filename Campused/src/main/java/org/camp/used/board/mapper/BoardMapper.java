@@ -6,6 +6,7 @@ import org.camp.used.board.dto.BoardGetResDTO;
 import org.camp.used.board.dto.BoardInsertDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
 import org.camp.used.board.dto.BoardSearchResDTO;
+import org.camp.used.board.dto.BoardTotalCountDTO;
 import org.camp.used.board.dto.BoardUpdateRequestDTO;
 
 public interface BoardMapper {
@@ -16,8 +17,10 @@ public interface BoardMapper {
 	
 	BoardGetResDTO getOne(Long bno);
 	
-	Long update(BoardUpdateRequestDTO dto);
+	BoardTotalCountDTO getAllCount();
 	
 	List<BoardSearchResDTO> getPageList(BoardSearchRequestDTO dto);
+	
+	Long update(BoardUpdateRequestDTO dto);
 	
 }	

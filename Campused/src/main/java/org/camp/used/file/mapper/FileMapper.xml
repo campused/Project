@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.camp.used.file.mapper.FileMapper">
+  
+  	<insert id="testInsertFile">
+  		insert into tbl_file (fuuid, fname, fuploadpath, ftype, fmain, fmoddate, fregdate, board_bno)
+  		values (#{fuuid}, #{fname}, #{fuploadpath}, #{ftype}, #{fmain}, now(), now(), #{board_bno})
+  	</insert>
+  
+  	<insert id="insertFile">
+  		insert into tbl_file (fuuid, fname, fuploadpath, ftype, fmoddate, fregdate, board_bno)
+  		values (#{fuuid}, #{fname}, #{fuploadpath}, #{ftype}, now(), now(), #{board_bno})
+  	</insert>
+  	
+  	<delete id="deleteFile">
+  		delete from tbl_file where fno = #{fno}
+  	</delete>
+  	
+  	<select id="findByBno" resultType="org.camp.used.file.dto.BoardAttachDTO">
+  		select * from tbl_file where board_bno = #{board_bno}
+  	</select>
+  
+  </mapper>

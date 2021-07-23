@@ -39,14 +39,14 @@ public class MemberMapperTests {
 			.mlikecount(100L)
 			.mdeleted(false)
 			.build();
-			memberMapper.insert(dto);
+			memberMapper.insertMember(dto);
 		});
 	}
 	
 	@Test
 	public void testReadOne() {
 		log.info("===testReadOne Start!!===");
-		Optional<MemberGetOneDTO> result = memberMapper.selectOne(4L);
+		Optional<MemberGetOneDTO> result = memberMapper.selectOneMember(4L);
 		log.info(result);
 	}
 	
@@ -61,7 +61,7 @@ public class MemberMapperTests {
 		dto.setMaddress("을지로3가");
 		dto.setMphone("010-9876-4321");
 		dto.setMauthority(2);
-		int check = memberMapper.update(dto);
+		int check = memberMapper.updateMember(dto);
 		if(check == 1) {
 			log.info("===success===");
 		}
@@ -73,7 +73,7 @@ public class MemberMapperTests {
 		MemberDeleteDTO dto = new MemberDeleteDTO();
 		dto.setMno(4L);
 		dto.setMdeleted(true);
-		int check = memberMapper.delete(dto);
+		int check = memberMapper.deleteMember(dto);
 		if(check ==1) {
 			log.info("===success===");
 		}

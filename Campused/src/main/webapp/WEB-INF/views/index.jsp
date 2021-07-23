@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
   <!-- Basic Page Needs
   ================================================== -->
-  <meta charset="utf-8">
-  <title>Aviato | E-commerce template</title>
+  <meta charset="UTF-8">
+  <title>Campused | 중고 캠핑용품 거래몰!</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -19,21 +18,21 @@
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
   
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="../aviato/images/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.png" />
   
   <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="/aviato/plugins/themefisher-font/style.css">
+  <link rel="stylesheet" href="/resources/plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="/aviato/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/resources/plugins/bootstrap/css/bootstrap.min.css">
   
   <!-- Animate css -->
-  <link rel="stylesheet" href="/aviato/plugins/animate/animate.css">
+  <link rel="stylesheet" href="/resources/plugins/animate/animate.css">
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="/aviato/plugins/slick/slick.css">
-  <link rel="stylesheet" href="/aviato/plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="/resources/plugins/slick/slick.css">
+  <link rel="stylesheet" href="/resources/plugins/slick/slick-theme.css">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="/aviato/css/style.css">
+  <link rel="stylesheet" href="/resources/css/style.css">
 
 </head>
 
@@ -52,7 +51,7 @@
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index.html">
+					<a href="about">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -60,7 +59,7 @@
 								font-family="AustinBold, Austin" font-weight="bold">
 								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
 									<text id="AVIATO">
-										<tspan x="108.94" y="325">AVIATO</tspan>
+										<tspan x="108.94" y="325">CAMPUSED</tspan>
 									</text>
 								</g>
 							</g>
@@ -78,7 +77,7 @@
 							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
-									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+									<img class="media-object" src="/resources/images/shop/cart/cart-1.jpg" alt="image" />
 								</a>
 								<div class="media-body">
 									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
@@ -93,7 +92,7 @@
 							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
-									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
+									<img class="media-object" src="/resources/images/shop/cart/cart-2.jpg" alt="image" />
 								</a>
 								<div class="media-body">
 									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
@@ -111,8 +110,8 @@
 								<span class="total-price">$1799.00</span>
 							</div>
 							<ul class="text-center cart-buttons">
-								<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
-								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+								<li><a href="cart" class="btn btn-small">View Cart</a></li>
+								<li><a href="checkout" class="btn btn-small btn-solid-border">Checkout</a></li>
 							</ul>
 						</div>
 
@@ -168,7 +167,7 @@
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index.html">Home</a>
+						<a href="/	">Home</a>
 					</li><!-- / Home -->
 
 
@@ -185,11 +184,11 @@
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="confirmation.html">Confirmation</a></li>
+										<li><a href="shop">Shop</a></li>
+										<li><a href="checkout">Checkout</a></li>
+										<li><a href="cart">Cart</a></li>
+										<li><a href="pricing">Pricing</a></li>
+										<li><a href="confirmation">Confirmation</a></li>
 
 									</ul>
 								</div>
@@ -199,8 +198,8 @@
 									<ul>
 										<li class="dropdown-header">Layout</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="product-single.html">Product Details</a></li>
-										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
+										<li><a href="product-single">Product Details</a></li>
+										<li><a href="shop-sidebar">Shop With Sidebar</a></li>
 
 									</ul>
 								</div>
@@ -223,11 +222,11 @@
 									<ul>
 										<li class="dropdown-header">Introduction</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="contact.html">Contact Us</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-										<li><a href="faq.html">FAQ</a></li>
+										<li><a href="contact">Contact Us</a></li>
+										<li><a href="about">About Us</a></li>
+										<li><a href="404">404 Page</a></li>
+										<li><a href="coming-soon">Coming Soon</a></li>
+										<li><a href="faq">FAQ</a></li>
 									</ul>
 								</div>
 
@@ -236,10 +235,10 @@
 									<ul>
 										<li class="dropdown-header">Dashboard</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.html">User Interface</a></li>
-										<li><a href="order.html">Orders</a></li>
-										<li><a href="address.html">Address</a></li>
-										<li><a href="profile-details.html">Profile Details</a></li>
+										<li><a href="dashboard">User Interface</a></li>
+										<li><a href="order">Orders</a></li>
+										<li><a href="address">Address</a></li>
+										<li><a href="profile-details">Profile Details</a></li>
 									</ul>
 								</div>
 
@@ -248,16 +247,16 @@
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="login.html">Login Page</a></li>
-										<li><a href="signin.html">Signin Page</a></li>
-										<li><a href="forget-password.html">Forget Password</a></li>
+										<li><a href="login">Login Page</a></li>
+										<li><a href="signin">Signin Page</a></li>
+										<li><a href="forget-password">Forget Password</a></li>
 									</ul>
 								</div>
 
 								<!-- Mega Menu -->
 								<div class="col-sm-3 col-xs-12">
-									<a href="shop.html">
-										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
+									<a href="shop">
+										<img class="img-responsive" src="/resources/images/shop/header-img.jpg" alt="menu image" />
 									</a>
 								</div>
 							</div><!-- / .row -->
@@ -272,11 +271,11 @@
 							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-							<li><a href="blog-full-width.html">Blog Full Width</a></li>
-							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
-							<li><a href="blog-single.html">Blog Single</a></li>
+							<li><a href="blog-left-sidebar">Blog Left Sidebar</a></li>
+							<li><a href="blog-right-sidebar">Blog Right Sidebar</a></li>
+							<li><a href="blog-full-width">Blog Full Width</a></li>
+							<li><a href="blog-grid">Blog 2 Columns</a></li>
+							<li><a href="blog-single">Blog Single</a></li>
 						</ul>
 					</li><!-- / Blog -->
 
@@ -286,9 +285,9 @@
 							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="typography.html">Typography</a></li>
-							<li><a href="buttons.html">Buttons</a></li>
-							<li><a href="alerts.html">Alerts</a></li>
+							<li><a href="typography">Typography</a></li>
+							<li><a href="buttons">Buttons</a></li>
+							<li><a href="alerts">Alerts</a></li>
 						</ul>
 					</li><!-- / Blog -->
 				</ul><!-- / .nav .navbar-nav -->
@@ -300,35 +299,35 @@
 </section>
 
 <div class="hero-slider">
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-1.jpg);">
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-1.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-3.jpg);">
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-3.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 text-left">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-2.jpg);">
+  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-2.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 text-right">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
         </div>
       </div>
     </div>
@@ -346,7 +345,7 @@
 			<div class="col-md-6">
 				<div class="category-box">
 					<a href="#!">
-						<img src="images/shop/category/category-1.jpg" alt="" />
+						<img src="/resources/images/shop/category/category-1.jpg" alt="" />
 						<div class="content">
 							<h3>Clothes Sales</h3>
 							<p>Shop New Season Clothing</p>
@@ -355,7 +354,7 @@
 				</div>
 				<div class="category-box">
 					<a href="#!">
-						<img src="images/shop/category/category-2.jpg" alt="" />
+						<img src="/resources/images/shop/category/category-2.jpg" alt="" />
 						<div class="content">
 							<h3>Smart Casuals</h3>
 							<p>Get Wide Range Selection</p>
@@ -366,7 +365,7 @@
 			<div class="col-md-6">
 				<div class="category-box category-box-2">
 					<a href="#!">
-						<img src="images/shop/category/category-3.jpg" alt="" />
+						<img src="/resources/images/shop/category/category-3.jpg" alt="" />
 						<div class="content">
 							<h3>Jewellery</h3>
 							<p>Special Design Comes First</p>
@@ -391,7 +390,7 @@
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
-						<img class="img-responsive" src="images/shop/products/product-1.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -409,7 +408,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Reef Boardsport</a></h4>
+						<h4><a href="product-single">Reef Boardsport</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -417,7 +416,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-2.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-2.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -435,7 +434,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -443,7 +442,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-3.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-3.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -461,7 +460,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Strayhorn SP</a></h4>
+						<h4><a href="product-single">Strayhorn SP</a></h4>
 						<p class="price">$230</p>
 					</div>
 				</div>
@@ -469,7 +468,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-4.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-4.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -487,7 +486,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Bradley Mid</a></h4>
+						<h4><a href="product-single">Bradley Mid</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -495,7 +494,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-5.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-5.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -513,7 +512,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -521,7 +520,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-6.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-6.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -539,7 +538,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -548,7 +547,7 @@
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
-						<img class="img-responsive" src="images/shop/products/product-7.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-7.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -566,7 +565,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -574,7 +573,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-8.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-8.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -592,7 +591,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -600,7 +599,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="images/shop/products/product-9.jpg" alt="product-img" />
+						<img class="img-responsive" src="/resources/images/shop/products/product-9.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -618,7 +617,7 @@
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">Rainbow Shoes</a></h4>
+						<h4><a href="product-single">Rainbow Shoes</a></h4>
 						<p class="price">$200</p>
 					</div>
 				</div>
@@ -635,7 +634,7 @@
 			        	<div class="row">
 			        		<div class="col-md-8 col-sm-6 col-xs-12">
 			        			<div class="modal-image">
-				        			<img class="img-responsive" src="images/shop/products/modal-product.jpg" alt="product-img" />
+				        			<img class="img-responsive" src="/resources/images/shop/products/modal-product.jpg" alt="product-img" />
 			        			</div>
 			        		</div>
 			        		<div class="col-md-4 col-sm-6 col-xs-12">
@@ -645,8 +644,8 @@
 			        				<p class="product-short-description">
 			        					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
 			        				</p>
-			        				<a href="cart.html" class="btn btn-main">Add To Cart</a>
-			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="cart" class="btn btn-main">Add To Cart</a>
+			        				<a href="product-single" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -729,16 +728,16 @@ Start Call To Action
 				</ul>
 				<ul class="footer-menu text-uppercase">
 					<li>
-						<a href="contact.html">CONTACT</a>
+						<a href="contact">CONTACT</a>
 					</li>
 					<li>
-						<a href="shop.html">SHOP</a>
+						<a href="shop">SHOP</a>
 					</li>
 					<li>
-						<a href="pricing.html">Pricing</a>
+						<a href="pricing">Pricing</a>
 					</li>
 					<li>
-						<a href="contact.html">PRIVACY POLICY</a>
+						<a href="contact">PRIVACY POLICY</a>
 					</li>
 				</ul>
 				<p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
@@ -752,29 +751,28 @@ Start Call To Action
     =====================================-->
     
     <!-- Main jQuery -->
-    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/resources/plugins/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.1 -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/resources/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Bootstrap Touchpin -->
-    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="/resources/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
     <!-- Instagram Feed Js -->
-    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <script src="/resources/plugins/instafeed/instafeed.min.js"></script>
     <!-- Video Lightbox Plugin -->
-    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <script src="/resources/plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
     <!-- Count Down Js -->
-    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+    <script src="/resources/plugins/syo-timer/build/jquery.syotimer.min.js"></script>
 
     <!-- slick Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/slick/slick-animation.min.js"></script>
+    <script src="/resources/plugins/slick/slick.min.js"></script>
+    <script src="/resources/plugins/slick/slick-animation.min.js"></script>
 
     <!-- Google Mapl -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+    <script type="text/javascript" src="/resources/plugins/google-map/gmap.js"></script>
 
     <!-- Main Js File -->
-    <script src="js/script.js"></script>
-    
+    <script src="/resources/js/script.js"></script>
 
 
   </body>

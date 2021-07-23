@@ -19,7 +19,6 @@
  		<result property="bprice" column="bprice"/>
  	</resultMap>
  	
- 
  	<insert id="cartInsert">
  		INSERT INTO tbl_cartlist (member_mno, board_bno, cregdate, cmoddate)
 		VALUES (#{member_mno}, #{board_bno}, now(), now())
@@ -39,6 +38,7 @@
 		LEFT JOIN tbl_board b ON c.board_bno = b.bno
 		WHERE c.member_mno = #{mno}
 		AND cno > 0
+		ORDER BY cno desc
  	</select>
  
  </mapper>

@@ -14,6 +14,4 @@ public interface ReplyMapper {
 	
 	void replyUpdate(ReplyUpdateDTO dto);
 	
-	List<ReplyResDTO> replyGet(Long bno);
-	
 }
