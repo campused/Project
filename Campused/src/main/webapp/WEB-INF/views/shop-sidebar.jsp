@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
 
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="UTF-8">
-  <title>Campused | 중고 캠핑용품 거래몰!</title>
+  <title>Aviato | E-commerce template</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -51,7 +53,7 @@
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="about">
+					<a href="/">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -59,7 +61,7 @@
 								font-family="AustinBold, Austin" font-weight="bold">
 								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
 									<text id="AVIATO">
-										<tspan x="108.94" y="325">CAMPUSED</tspan>
+										<tspan x="108.94" y="325">AVIATO</tspan>
 									</text>
 								</g>
 							</g>
@@ -77,7 +79,7 @@
 							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
-									<img class="media-object" src="/resources/images/shop/cart/cart-1.jpg" alt="image" />
+									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
 								</a>
 								<div class="media-body">
 									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
@@ -92,7 +94,7 @@
 							<!-- Cart Item -->
 							<div class="media">
 								<a class="pull-left" href="#!">
-									<img class="media-object" src="/resources/images/shop/cart/cart-2.jpg" alt="image" />
+									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
 								</a>
 								<div class="media-body">
 									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
@@ -167,7 +169,7 @@
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="/	">Home</a>
+						<a href="/">Home</a>
 					</li><!-- / Home -->
 
 
@@ -256,7 +258,7 @@
 								<!-- Mega Menu -->
 								<div class="col-sm-3 col-xs-12">
 									<a href="shop">
-										<img class="img-responsive" src="/resources/images/shop/header-img.jpg" alt="menu image" />
+										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
 									</a>
 								</div>
 							</div><!-- / .row -->
@@ -298,99 +300,108 @@
 	</nav>
 </section>
 
-<div class="hero-slider">
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-1.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-center">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-3.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-left">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-2.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-right">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="product-category section">
+<section class="page-header">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="title text-center">
-					<h2>Product Category</h2>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-1.jpg" alt="" />
-						<div class="content">
-							<h3>Clothes Sales</h3>
-							<p>Shop New Season Clothing</p>
-						</div>
-					</a>	
-				</div>
-				<div class="category-box">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-2.jpg" alt="" />
-						<div class="content">
-							<h3>Smart Casuals</h3>
-							<p>Get Wide Range Selection</p>
-						</div>
-					</a>	
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box category-box-2">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-3.jpg" alt="" />
-						<div class="content">
-							<h3>Jewellery</h3>
-							<p>Special Design Comes First</p>
-						</div>
-					</a>	
+				<div class="content">
+					<h1 class="page-name">Shop</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">shop</li>
+					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="products section bg-gray">
+
+<section class="products section">
 	<div class="container">
 		<div class="row">
-			<div class="title text-center">
-				<h2>Trendy Products</h2>
+			<div class="col-md-3">
+				<div class="widget">
+					<h4 class="widget-title">Short By</h4>
+					<form method="post" action="#">
+                        <select class="form-control">
+                            <option>Man</option>
+                            <option>Women</option>
+                            <option>Accessories</option>
+                            <option>Shoes</option>
+                        </select>
+                    </form>
+	            </div>
+				<div class="widget product-category">
+					<h4 class="widget-title">Categories</h4>
+					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
+					  	<div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingOne">
+						      	<h4 class="panel-title">
+						        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          	Shoes
+						        	</a>
+						      	</h4>
+						    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<ul>
+									<li><a href="#!">Brand & Twist</a></li>
+									<li><a href="#!">Shoe Color</a></li>
+									<li><a href="#!">Shoe Color</a></li>
+								</ul>
+							</div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingTwo">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					         	Duty Wear
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					    	<div class="panel-body">
+					     		<ul>
+									<li><a href="#!">Brand & Twist</a></li>
+									<li><a href="#!">Shoe Color</a></li>
+									<li><a href="#!">Shoe Color</a></li>
+								</ul>
+					    	</div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingThree">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          	WorkOut Shoes
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					    	<div class="panel-body">
+					      		<ul>
+									<li><a href="#!">Brand & Twist</a></li>
+									<li><a href="#!">Shoe Color</a></li>
+									<li><a href="#!">Gladian Shoes</a></li>
+									<li><a href="#!">Swis Shoes</a></li>
+								</ul>
+					    	</div>
+					    </div>
+					  </div>
+					</div>
+					
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			
+			<div class="col-md-9">
+				<div class="row">
+					
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
-						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-1.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -416,7 +427,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-2.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-2.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -442,7 +453,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-3.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-3.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -468,7 +479,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-4.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-4.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -494,7 +505,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-5.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-5.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -520,7 +531,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-6.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-6.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -547,7 +558,7 @@
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
-						<img class="img-responsive" src="/resources/images/shop/products/product-7.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-7.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -573,7 +584,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-8.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-8.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -599,7 +610,7 @@
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-9.jpg" alt="product-img" />
+						<img class="img-responsive" src="images/shop/products/product-9.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -634,7 +645,7 @@
 			        	<div class="row">
 			        		<div class="col-md-8 col-sm-6 col-xs-12">
 			        			<div class="modal-image">
-				        			<img class="img-responsive" src="/resources/images/shop/products/modal-product.jpg" alt="product-img" />
+				        			<img class="img-responsive" src="images/shop/products/modal-product.jpg" alt="product-img" />
 			        			</div>
 			        		</div>
 			        		<div class="col-md-4 col-sm-6 col-xs-12">
@@ -654,50 +665,14 @@
 		  	</div>
 		</div><!-- /.modal -->
 
+				</div>				
+			</div>
+		
 		</div>
 	</div>
 </section>
 
 
-<!--
-Start Call To Action
-==================================== -->
-<section class="call-to-action bg-gray section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<div class="title">
-					<h2>SUBSCRIBE TO NEWSLETTER</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, <br> facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit laboriosam.</p>
-				</div>
-				<div class="col-lg-6 col-md-offset-3">
-				    <div class="input-group subscription-form">
-				      <input type="text" class="form-control" placeholder="Enter Your Email Address">
-				      <span class="input-group-btn">
-				        <button class="btn btn-main" type="button">Subscribe Now!</button>
-				      </span>
-				    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-
-			</div>
-		</div> 		<!-- End row -->
-	</div>   	<!-- End container -->
-</section>   <!-- End section -->
-
-<section class="section instagram-feed">
-	<div class="container">
-		<div class="row">
-			<div class="title">
-				<h2>View us on instagram</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="instagram-slider" id="instafeed" data-accessToken="IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"></div>
-			</div>
-		</div>
-	</div>
-</section>
 
 
 <footer class="footer section text-center">
@@ -773,6 +748,7 @@ Start Call To Action
 
     <!-- Main Js File -->
     <script src="/resources/js/script.js"></script>
+    
 
 
   </body>

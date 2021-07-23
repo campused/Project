@@ -62,6 +62,7 @@
 	WHERE b.member_mno = #{mno}
 	AND adeleted != 1 
 	AND a.member_mno > 0
+	ORDER BY ano DESC
  </select>
  
  </mapper>

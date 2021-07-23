@@ -20,8 +20,13 @@ import lombok.extern.log4j.Log4j;
 @Configuration
 @Log4j
 @MapperScan(basePackages 
+<<<<<<< HEAD
 		= {"org.camp.used.member.mapper", "org.camp.used.board.mapper", "org.camp.used.reply.mapper", "org.camp.used.cart.mapper", "org.camp.used.apply.mapper", "org.camp.used.file.mapper"})
 @ComponentScan(basePackages = {"org.camp.used.service", "org.camp.used.aop", "org.camp.used.board.service"})
+=======
+		= {"org.camp.used.member.mapper", "org.camp.used.board.mapper", "org.camp.used.reply.mapper", "org.camp.used.cart.mapper", "org.camp.used.apply.mapper"})
+@ComponentScan(basePackages = {"org.camp.used.service", "org.camp.used.aop", "org.camp.used"})
+>>>>>>> branch 'Jinseob' of https://github.com/campused/Project.git
 @EnableAspectJAutoProxy 
 @EnableTransactionManagement
 public class RootConfig {
