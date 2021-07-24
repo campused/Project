@@ -128,3 +128,26 @@
 		TRUNCATE tbl_member;
 		
 		SELECT * FROM tbl_member WHERE mno = 200;
+		
+		SELECT bno, bstate, btitle, bcontent, bprice, bregdate, bmoddate, m.*, r.*, f.*
+		FROM tbl_board b
+		LEFT JOIN tbl_member m ON b.member_mno = m.mno
+		LEFT JOIN tbl_reply r ON b.bno = r.board_bno
+		LEFT JOIN tbl_file f ON f.board_bno = b.bno
+		WHERE b.bno = 1
+		AND b.bno > 0
+		
+		SELECT 
+		c.cno, 
+		c.member_mno AS cartMno,
+		b.*,
+		f.*
+		FROM tbl_cartlist c
+		LEFT JOIN tbl_board b ON c.board_bno = b.bno
+		LEFT JOIN tbl_file f ON f.board_bno = c.cno
+		AND f.fmain = true
+		WHERE c.member_mno = 12
+		AND cno > 0
+		GROUP BY cno
+		ORDER BY cno desc
+		
