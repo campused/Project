@@ -239,6 +239,7 @@
 										<li><a href="order">Orders</a></li>
 										<li><a href="address">Address</a></li>
 										<li><a href="profile-details">Profile Details</a></li>
+										<li><a href="Product-Registration.jsp">Product Registration</a></li>
 									</ul>
 								</div>
 
@@ -401,12 +402,6 @@ $(document).ready(function(){
 				keyword: ""
 		}
 		
-		/* var requestData = new Object();
-		requestData.page = "1";
-		requestData.size = "10";
-		requestData.type = "";
-		requestData.keyword = ""; */
-		
 		$.ajax({
 			url: "/board/list?page=1&size=10&type=&keyword=",
 			method: "GET",
@@ -442,7 +437,7 @@ $(document).ready(function(){
 						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
-								<li>
+								<li class="modalOpen">
 									<span  data-toggle="modal" data-target="#product-modal">
 										<i class="tf-ion-ios-search-strong"></i>
 									</span>
@@ -674,6 +669,21 @@ $(document).ready(function(){
 		
 		<!-- Modal -->
 		<div class="modal product-modal fade" id="product-modal">
+		<script>
+			$(document).ready(function(){
+				$(".modalOpen").click(function(){
+					$.ajax({
+						url: "/board/"+1,
+						method: "GET",
+						contentType: "application/json; charset=utf-8",
+						dataType: "json",
+						success: function(data) {
+							console.log(data);
+						}
+					})
+				})
+			})
+		</script>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<i class="tf-ion-close"></i>
 			</button>

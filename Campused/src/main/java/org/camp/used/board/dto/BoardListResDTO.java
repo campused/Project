@@ -1,8 +1,19 @@
 package org.camp.used.board.dto;
 
+import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
-public class BoardListResDTO {
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class BoardListResDTO<D> {
 	
+	private List<D> boardSearchResDTO;
+	
+	private BoardPageResultDTO boardPageResultDTO;
 	
 }
