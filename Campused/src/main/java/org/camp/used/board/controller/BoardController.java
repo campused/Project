@@ -29,9 +29,11 @@ public class BoardController {
 	
 	private final BoardService boardService;
 
-	@PostMapping("/insert")
+	@PostMapping(value= "/insert", produces= MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
 	public ResponseEntity<String> boardInsert(@RequestBody BoardInsertDTO dto) {
 		log.info("======================");
+		log.info(dto);
 		if(dto.getAttachList() != null) {
 			dto.getAttachList().forEach(list -> {
 				log.info(list);
