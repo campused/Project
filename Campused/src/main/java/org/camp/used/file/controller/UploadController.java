@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.camp.used.file.dto.AttachFileDTO;
+import org.camp.used.file.dto.FileInsertDTO;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -60,12 +61,12 @@ public class UploadController {
 		log.info("=========upload ajax=========");
 	}
 
-	@PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResponseEntity<List<AttachFileDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
+	public ResponseEntity<List<FileInsertDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
 
 		log.info("===update ajax post===");
-		List<AttachFileDTO> list = new ArrayList<>();
+		List<FileInsertDTO> list = new ArrayList<>();
 		String uploadFolder = "C:\\campUpload\\temp";
 
 		String uploadFolderPath = getFolder();
@@ -80,14 +81,14 @@ public class UploadController {
 		// start loop
 		for (MultipartFile multipartFile : uploadFile) {
 
-			AttachFileDTO attachFileDTO = new AttachFileDTO();
+			FileInsertDTO fileInsertDTO = new FileInsertDTO();
 
 			String uploadFileName = multipartFile.getOriginalFilename();
 
 			log.info("==================================");
 			log.info("Upload File Name:" + multipartFile.getOriginalFilename());
 			log.info("UploadFile Size: " + multipartFile.getSize());
-			attachFileDTO.setFileName(uploadFileName);
+			fileInsertDTO.setFname(uploadFileName);
 			log.info("===only file name:" + uploadFileName);
 
 			UUID uuid = UUID.randomUUID();
@@ -97,18 +98,19 @@ public class UploadController {
 				File saveFile = new File(uploadPath, uploadFileName);
 				multipartFile.transferTo(saveFile); // File save
 
-				attachFileDTO.setUuid(uuid.toString());
-				attachFileDTO.setUploadPath(uploadFolderPath);
+				fileInsertDTO.setFuuid(uuid.toString());
+				fileInsertDTO.setFuploadpath(uploadFolderPath);
+				fileInsertDTO.setFmain(false); // 여기서 하는게 맞나..?
 
 				// check image type
 				if (checkImageType(saveFile)) {
-					attachFileDTO.setImage(true);
+					fileInsertDTO.setFtype(true);
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_" + uploadFileName));
 					Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 100, 100);
 					thumbnail.close();
 				}
 
-				list.add(attachFileDTO);
+				list.add(fileInsertDTO);
 
 			} catch (IOException e) {
 				log.error(e.getMessage());

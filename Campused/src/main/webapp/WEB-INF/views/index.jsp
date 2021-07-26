@@ -53,7 +53,7 @@
 				<div class="logo text-center">
 					<a href="about">
 						<!-- replace logo here -->
-						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						<svg width="100%" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
 							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
 								font-family="AustinBold, Austin" font-weight="bold">
@@ -239,7 +239,7 @@
 										<li><a href="order">Orders</a></li>
 										<li><a href="address">Address</a></li>
 										<li><a href="profile-details">Profile Details</a></li>
-										<li><a href="Product-Registration.jsp">Product Registration</a></li>
+										<li><a href="Product-Registration">Product Registration</a></li>
 									</ul>
 								</div>
 
@@ -298,93 +298,12 @@
 		</div><!-- / .container -->
 	</nav>
 </section>
-
-<div class="hero-slider">
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-1.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-center">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-3.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-left">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(/resources/images/slider/slider-2.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-right">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="product-category section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="title text-center">
-					<h2>Product Category</h2>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-1.jpg" alt="" />
-						<div class="content">
-							<h3>Clothes Sales</h3>
-							<p>Shop New Season Clothing</p>
-						</div>
-					</a>	
-				</div>
-				<div class="category-box">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-2.jpg" alt="" />
-						<div class="content">
-							<h3>Smart Casuals</h3>
-							<p>Get Wide Range Selection</p>
-						</div>
-					</a>	
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box category-box-2">
-					<a href="#!">
-						<img src="/resources/images/shop/category/category-3.jpg" alt="" />
-						<div class="content">
-							<h3>Jewellery</h3>
-							<p>Special Design Comes First</p>
-						</div>
-					</a>	
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="products section bg-gray">
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 		crossorigin="anonymous">
-		
 	</script>
 
 <script type="text/javascript">
@@ -431,11 +350,15 @@ $(document).ready(function(){
 		<div class="row">
 			
 			<div class="col-md-4">
+			
+			
+			
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
 						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
 						<div class="preview-meta">
+						
 							<ul>
 								<li class="modalOpen">
 									<span  data-toggle="modal" data-target="#product-modal">
@@ -449,6 +372,7 @@ $(document).ready(function(){
 									<a href="#!"><i class="tf-ion-android-cart"></i></a>
 								</li>
 							</ul>
+							
                       	</div>
 					</div>
 					<div class="product-content">
@@ -456,6 +380,10 @@ $(document).ready(function(){
 						<p class="price">$200</p>
 					</div>
 				</div>
+				
+				
+				
+				
 			</div>
 			<div class="col-md-4">
 				<div class="product-item">
