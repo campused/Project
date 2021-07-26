@@ -10,12 +10,12 @@ import org.camp.used.member.dto.MemberUpdateDTO;
 
 public interface MemberMapper {
 	
-	void insert(MemberInsertDTO dto);
+	void insertMember(MemberInsertDTO dto);
 	
-	Optional<MemberGetOneDTO> selectOne(Long mno);
+	Optional<MemberGetOneDTO> selectOneMember(Long mno);
 	
-	public int update(MemberUpdateDTO dto);
+	public int updateMember(MemberUpdateDTO dto);
 	
-	public int delete(MemberDeleteDTO dto);
+	public int deleteMember(MemberDeleteDTO dto);
 
 }

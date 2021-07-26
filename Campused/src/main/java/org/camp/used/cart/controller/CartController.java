@@ -43,7 +43,7 @@ public class CartController {
 		return ResponseEntity.ok("Cart delete succ");
 	}
 	
-	@GetMapping(value = "/{mno}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	@GetMapping(value = "/{mno}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<List<CartGetResDTO>> cartGet(@PathVariable Long mno) {
 		List<CartGetResDTO> result = cartService.cartGet(mno);

@@ -239,6 +239,7 @@
 										<li><a href="order">Orders</a></li>
 										<li><a href="address">Address</a></li>
 										<li><a href="profile-details">Profile Details</a></li>
+										<li><a href="Product-Registration.jsp">Product Registration</a></li>
 									</ul>
 								</div>
 
@@ -378,6 +379,49 @@
 </section>
 
 <section class="products section bg-gray">
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous">
+		
+	</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(function(){
+		board_list()
+	});
+	
+	function board_list() {
+		
+		var requestData = {
+				page: "1",
+				size: "10",
+				type: "",
+				keyword: ""
+		}
+		
+		$.ajax({
+			url: "/board/list?page=1&size=10&type=&keyword=",
+			method: "GET",
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			error:function(error,status,msg){
+				alert("상태코드 " + status + "에러메시지" + msg );
+			},
+			success: board_list_result,
+		})
+	}
+	
+	function board_list_result(xhr) {
+		console.log(xhr);
+	};
+})
+
+// end jQuery
+</script>
+
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
@@ -393,7 +437,7 @@
 						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
-								<li>
+								<li class="modalOpen">
 									<span  data-toggle="modal" data-target="#product-modal">
 										<i class="tf-ion-ios-search-strong"></i>
 									</span>
@@ -625,6 +669,21 @@
 		
 		<!-- Modal -->
 		<div class="modal product-modal fade" id="product-modal">
+		<script>
+			$(document).ready(function(){
+				$(".modalOpen").click(function(){
+					$.ajax({
+						url: "/board/"+1,
+						method: "GET",
+						contentType: "application/json; charset=utf-8",
+						dataType: "json",
+						success: function(data) {
+							console.log(data);
+						}
+					})
+				})
+			})
+		</script>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<i class="tf-ion-close"></i>
 			</button>

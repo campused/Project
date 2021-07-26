@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.camp.used.board.dto.BoardGetResDTO;
 import org.camp.used.board.dto.BoardInsertDTO;
+import org.camp.used.board.dto.BoardListResDTO;
 import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
 import org.camp.used.board.dto.BoardSearchResDTO;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,6 +37,13 @@ public class BoardController {
 
 	@PostMapping("/insert")
 	public ResponseEntity<String> boardInsert(@RequestBody BoardInsertDTO dto) {
+		log.info("======================");
+		if(dto.getAttachList() != null) {
+			dto.getAttachList().forEach(list -> {
+				log.info(list);
+			});
+		}
+		log.info("======================");
 		boardService.insert(dto);
 		return ResponseEntity.ok("입력 완료");
 	}
@@ -59,10 +68,8 @@ public class BoardController {
 	
 	@GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResponseEntity<Map<List<BoardSearchResDTO>, BoardPageResultDTO>> boardGetList(@RequestBody BoardSearchRequestDTO dto) {
-		Map<List<BoardSearchResDTO>, BoardPageResultDTO> map = boardService.getPageList(dto);
-
-		return ResponseEntity.ok(map);
+	public ResponseEntity<BoardListResDTO<?>> boardGetList(BoardSearchRequestDTO dto) {
+		return ResponseEntity.ok(boardService.getPageList(dto));
 	}
 	
 	

@@ -5,9 +5,14 @@
   
   <mapper namespace="org.camp.used.file.mapper.FileMapper">
   
+  	<insert id="testInsertFile">
+  		insert into tbl_file (fuuid, fname, fuploadpath, ftype, fmain, fmoddate, fregdate, board_bno)
+  		values (#{fuuid}, #{fname}, #{fuploadpath}, #{ftype}, #{fmain}, now(), now(), #{board_bno})
+  	</insert>
+  
   	<insert id="insertFile">
-  		insert into tbl_file (fuuid, fuploadpath, fname, ftype, board_bno)
-  		values (#{uuid}, #{uploadpath}, #{fname}, #{ftype}, #{board_bno})
+  		insert into tbl_file (fuuid, fname, fuploadpath, ftype, fmoddate, fregdate, board_bno)
+  		values (#{fuuid}, #{fname}, #{fuploadpath}, #{ftype}, now(), now(), #{board_bno})
   	</insert>
   	
   	<delete id="deleteFile">

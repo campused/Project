@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.camp.used.file.dto.BoardAttachDTO;
+import org.camp.used.file.dto.FileInsertDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,6 @@ public class BoardInsertDTO {
 	private LocalDateTime bmoddate;
 	private Long memberMno;
 	
-	private List<BoardAttachDTO> attachList; // 파일업로드, 게시판 insert할때 같이 넣기위해
+	private List<FileInsertDTO> attachList; // 파일업로드, 게시판 insert할때 같이 넣기위해
 	
 }

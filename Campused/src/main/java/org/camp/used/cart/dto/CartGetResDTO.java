@@ -3,6 +3,7 @@ package org.camp.used.cart.dto;
 import java.util.List;
 
 import org.camp.used.board.dto.BoardCartResDTO;
+import org.camp.used.file.dto.FileResDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +19,8 @@ public class CartGetResDTO {
 	private Long cno;
 	
 	private Long cartMno;
+	
+	private FileResDTO fileResDTO;
 
 	private List<BoardCartResDTO> BoardCartResDTO;
 

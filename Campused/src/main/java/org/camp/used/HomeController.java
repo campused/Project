@@ -112,22 +112,15 @@ public class HomeController {
     public String errorPage() {
     	return "404";
     }
-//    
-//    @RequestMapping(path = "address", method = RequestMethod.GET)
-//    public void address() {
-//    }
-//    
-//    @RequestMapping(path = "address", method = RequestMethod.GET)
-//    public void address() {
-//    }
-//    
-//    @RequestMapping(path = "address", method = RequestMethod.GET)
-//    public void address() {
-//    }
-//    
-//    @RequestMapping(path = "address", method = RequestMethod.GET)
-//    public void address() {
-//    }
     
+    @RequestMapping(path = "Product-Registration", method = RequestMethod.GET)
+    public String productRegistration() {
+    	return "Product-Registration";
+    }
+    
+    @RequestMapping(path = "profile-details", method = RequestMethod.GET)
+    public String profileDetails() {
+    	return "profile-details";
+    }
 	
 }
