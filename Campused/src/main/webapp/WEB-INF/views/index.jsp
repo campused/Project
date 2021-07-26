@@ -300,322 +300,23 @@
 </section>
 <section class="products section bg-gray">
 
-	<!-- jQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-		crossorigin="anonymous">
-		
-	</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-	$(function(){
-		board_list()
-	});
-	
-	function board_list() {
-		
-		var requestData = {
-				page: "1",
-				size: "10",
-				type: "",
-				keyword: ""
-		}
-		
-		$.ajax({
-			url: "/board/list?page=1&size=10&type=&keyword=",
-			method: "GET",
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			error:function(error,status,msg){
-				alert("상태코드 " + status + "에러메시지" + msg );
-			},
-			success: board_list_result,
-		})
-	}
-	
-	function board_list_result(xhr) {
-		console.log(xhr);
-	};
-})
-
-// end jQuery
-</script>
-
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
 				<h2>Trendy Products</h2>
 			</div>
 		</div>
-		<div class="row">
-			
-			<div class="col-md-4">
-			
-			
-			
-				<div class="product-item">
-					<div class="product-thumb">
-						<span class="bage">Sale</span>
-						<img class="img-responsive" src="/resources/images/shop/products/product-1.jpg" alt="product-img" />
-						<div class="preview-meta">
-						
-							<ul>
-								<li class="modalOpen">
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-							
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Reef Boardsport</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-				
-				
-				
-				
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-2.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-3.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Strayhorn SP</a></h4>
-						<p class="price">$230</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-4.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Bradley Mid</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-5.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-6.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<span class="bage">Sale</span>
-						<img class="img-responsive" src="/resources/images/shop/products/product-7.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-8.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="product-item">
-					<div class="product-thumb">
-						<img class="img-responsive" src="/resources/images/shop/products/product-9.jpg" alt="product-img" />
-						<div class="preview-meta">
-							<ul>
-								<li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-								</li>
-								<li>
-			                        <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-								</li>
-								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
-								</li>
-							</ul>
-                      	</div>
-					</div>
-					<div class="product-content">
-						<h4><a href="product-single">Rainbow Shoes</a></h4>
-						<p class="price">$200</p>
-					</div>
-				</div>
-			</div>
 		
+		<!-- Product List -->
+		<div class="row" id="productList">
+			
 		<!-- Modal -->
 		<div class="modal product-modal fade" id="product-modal">
-		<script>
-			$(document).ready(function(){
-				$(".modalOpen").click(function(){
-					$.ajax({
-						url: "/board/"+1,
-						method: "GET",
-						contentType: "application/json; charset=utf-8",
-						dataType: "json",
-						success: function(data) {
-							console.log(data);
-						}
-					})
-				})
-			})
-		</script>
+
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<i class="tf-ion-close"></i>
 			</button>
+			
 		  	<div class="modal-dialog " role="document">
 		    	<div class="modal-content">
 			      	<div class="modal-body">
@@ -644,49 +345,18 @@ $(document).ready(function(){
 
 		</div>
 	</div>
+	
+			
+		<!-- Pagination -->
+		<section class="pagingSection">
+			<div class="pagingBar" id="pagingBar">
+			
+			
+				  
+			</div>
+		</section>
+	
 </section>
-
-
-<!--
-Start Call To Action
-==================================== -->
-<section class="call-to-action bg-gray section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<div class="title">
-					<h2>SUBSCRIBE TO NEWSLETTER</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, <br> facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit laboriosam.</p>
-				</div>
-				<div class="col-lg-6 col-md-offset-3">
-				    <div class="input-group subscription-form">
-				      <input type="text" class="form-control" placeholder="Enter Your Email Address">
-				      <span class="input-group-btn">
-				        <button class="btn btn-main" type="button">Subscribe Now!</button>
-				      </span>
-				    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-
-			</div>
-		</div> 		<!-- End row -->
-	</div>   	<!-- End container -->
-</section>   <!-- End section -->
-
-<section class="section instagram-feed">
-	<div class="container">
-		<div class="row">
-			<div class="title">
-				<h2>View us on instagram</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="instagram-slider" id="instafeed" data-accessToken="IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"></div>
-			</div>
-		</div>
-	</div>
-</section>
-
 
 <footer class="footer section text-center">
 	<div class="container">
@@ -761,7 +431,215 @@ Start Call To Action
 
     <!-- Main Js File -->
     <script src="/resources/js/script.js"></script>
+    
+    
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous">
+		
+	</script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(function(){
+		board_list()
+	});
+
+	
+	function board_list() {
+		
+		$.ajax({
+			url: "/board/list?page=1&size=9&type=&keyword=",
+			method: "GET",
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			error:function(error, status, msg){
+				alert("상태코드 " + status + "에러메시지" + msg );
+			},
+			
+			
+			success: result,
+			
+		})
+	}
+	
+	function result(data) {
+		console.log("result", data);
+		
+		const boardList = data.boardSearchResDTO
+		console.log("boardList", boardList)
+		
+		var str = '<div class="box">';
+		var bno = 1;
+		
+		$.each(boardList, function(i) {
+			
+			str += '<div class="col-md-4">'
+				+ '<div class="product-item">'
+				+ '<div class="product-thumb">'
+				+ '<span class="bage">' + ((boardList[i].bstate === false) ? "삽니다" : "팝니다") + '</span>'
+				+ '<img class="img-responsive" src="display?fileName=' + boardList[i].fuuid + ".jpg" + '" alt="product-img"/>'
+				+ '<div class="preview-meta">'
+				+ '<ul>'
+				+ '<li class="modalOpen" data-target="#product-modal" data-test="aaa" data-bno="' + boardList[i].bno + '">'
+				+ '<span  data-toggle="modal" data-target="#product-modal" data-test="aaa" data-target="' + boardList[i].bno + '">'
+				+ '<i class="tf-ion-ios-search-strong"></i>'
+				+ '</span>'
+				+ '</li>'
+				+ '<li><a href="#!" ><i class="tf-ion-ios-heart"></i></a></li>'
+				+ '<li>'
+				+ '<a href="#!"><i class="tf-ion-android-cart"></i></a>'
+				+ '</li>'
+				+ '</ul>'
+				
+				+ '</div>'
+				+ '</div>' // thumb div end
+				
+				+ '<div class="product-content">'
+				+ '<h4><a href="product-single">' + boardList[i].btitle + '</a></h4>'
+				+ '<p class="price">' + boardList[i].bprice + '</p>'
+				+ '</div>' // producut-content div enb
+				+ '</div>'
+				+ '</div>'
+				str += '</div>'
+			
+		})
+			
+		$("#productList").append(str);
+		
+		$(".modalOpen").click(function(e){
+			
+			e.preventDefault();
+			
+			console.log("modalOnclick")
+			
+			var newBno = $(this).attr("data-bno");
+			
+			alert(newBno)
+			
+			$.ajax({
+				url: "/board/"+newBno,
+				method: "GET",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data) {
+					console.log("data in modal", data);
+					console.log("modalOpen")
+				}, error: function() {
+					console.log("error")
+				}
+			})
+			
+		})
+		
+/* 		function paging(data) {
+			console.log("paging")
+			console.log(data)
+			var pageResult = data.boardPageResultDTO
+			console.log("pageResult", pageResult)
+			
+			$.each(boardList, function(i) {
+				
+				str += '<ul class="pagination justify-content-center">'
+				
+						+ '<li class="page-item disabled">'
+						
+						+ pageResult.size
+						
+						+ '</li>'
+				
+				str += '</ul>'
+				
+			})
+			
+			$("#pagingBar").append(str);
+
+		};	 */
+		
+	};
+	
+})
+
+// end jQuery
+
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$(function(){
+		pagingList()
+	});
+
+	
+	function pagingList(page, size, type, keyword) {
+		
+		var page = 1
+		var size = 9
+		var type = ""
+		var keyword = ""
+		
+		$.ajax({
+			url: "/board/list?page="+page+"&size="+size+"&type="+type+"&keyword="+keyword,
+			method: "GET",
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			error:function(error, status, msg){
+				alert("상태코드 " + status + "에러메시지" + msg );
+			},
+			
+			
+			success: paging,
+			
+		})
+	}
+		
+		function paging(data) {
+			var pageResult = data.boardPageResultDTO
+			var pageList = pageResult.pageNumList
+			var currentPage = pageResult.page
+			console.log("pageResult", pageResult)
+			console.log("pageList", pageList)
+			console.log("page", currentPage)
+			
+			$('#page-link').click(function() {
+				console.log("클리익")
+				alert("Wㅉ")
+			});
+			
+			var str = '<ul class="pagination justify-content-center">' + '<li class="page-item ' + ((pageResult.prev === false) ? "disabled" : "") + '">'
+			+ '<a class="page-link" href="#" tabindex="-1">Prev</a>'
+			
+			$.each(pageList,  function(i) {
+				str += '</li>' 
+					+ '<li class="page-item ' + ((currentPage === pageList[i]) ? "active" : "") + '"><a class="page-link" href="#">' + pageList[i] + '</a></li>'
+				})
+
+				str += '<li class="page-item ' + ((pageResult.next === false) ? "disabled" : "") + '">' 
+				+ '<a class="page-link" id="page-link" tabindex="-1">Next</a>' + '</ul>'
+			
+			$("#pagingBar").append(str);
+
+		};	
+	
+})
+
+</script>
+
+<script>
+$(document).ready(function() {
+$('#product-modal').on('show.bs.modal', function(e) {         
+	console.log("show.bs.modal")
+	var newBno = $(e.relatedTarget).data('test');
+	console.log("bno", newBno)
+});   
+});
+
+</script>
 
   </body>
   </html>
