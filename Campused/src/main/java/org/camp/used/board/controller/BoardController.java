@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.camp.used.board.dto.BoardGetResDTO;
 import org.camp.used.board.dto.BoardInsertDTO;
+import org.camp.used.board.dto.BoardListResDTO;
 import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
 import org.camp.used.board.dto.BoardSearchResDTO;
@@ -67,9 +68,8 @@ public class BoardController {
 	
 	@GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResponseEntity<Map<List<BoardSearchResDTO>, BoardPageResultDTO>> boardGetList(BoardSearchRequestDTO dto) {
-		Map<List<BoardSearchResDTO>, BoardPageResultDTO> map = boardService.getPageList(dto);
-		return ResponseEntity.ok(map);
+	public ResponseEntity<BoardListResDTO<?>> boardGetList(BoardSearchRequestDTO dto) {
+		return ResponseEntity.ok(boardService.getPageList(dto));
 	}
 	
 	
