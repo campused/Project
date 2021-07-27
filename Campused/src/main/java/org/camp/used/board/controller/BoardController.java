@@ -1,14 +1,9 @@
 package org.camp.used.board.controller;
 
-import java.util.List;
-import java.util.Map;
-
 import org.camp.used.board.dto.BoardGetResDTO;
 import org.camp.used.board.dto.BoardInsertDTO;
 import org.camp.used.board.dto.BoardListResDTO;
-import org.camp.used.board.dto.BoardPageResultDTO;
 import org.camp.used.board.dto.BoardSearchRequestDTO;
-import org.camp.used.board.dto.BoardSearchResDTO;
 import org.camp.used.board.dto.BoardUpdateRequestDTO;
 import org.camp.used.board.service.BoardService;
 import org.springframework.http.MediaType;
@@ -20,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,16 +29,18 @@ public class BoardController {
 	
 	private final BoardService boardService;
 
-	@PostMapping("/insert")
+	@PostMapping(value= "/insert", produces= MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
 	public ResponseEntity<String> boardInsert(@RequestBody BoardInsertDTO dto) {
 		log.info("======================");
+		log.info(dto);
 		if(dto.getAttachList() != null) {
 			dto.getAttachList().forEach(list -> {
 				log.info(list);
 			});
 		}
 		log.info("======================");
-		boardService.insert(dto);
+//		boardService.insert(dto);
 		return ResponseEntity.ok("입력 완료");
 	}
 	

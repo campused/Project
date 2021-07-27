@@ -299,7 +299,6 @@
 	</nav>
 </section>
 <section class="products section bg-gray">
-
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">

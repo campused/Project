@@ -27,6 +27,4 @@ public class BoardSearchResDTO {
 	private String fuploadpath;
 	private String ftype;
 	
-	
-	
 }
