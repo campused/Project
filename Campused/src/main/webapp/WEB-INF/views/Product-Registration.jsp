@@ -25,7 +25,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                           <form role="form" action="/board/insert" method="post">
+                           <div role="form">
                               <div class="form-group">
                                  <label>제목</label>
                                  <input id="btitle" class="form-control" name='btitle'>
@@ -44,7 +44,7 @@
                               </div>
                               <button type="submit" class="btn btn-default">글 등록</button>
                               <button type="reset" class="btn btn-default">리셋</button>
-                           </form>
+                           </div>
                             
                         </div>
                         <!-- /.panel-body -->
@@ -87,39 +87,35 @@
             <script>
                 $(document).ready(function(e){
                 	
-                	var formObj = $("form[role='form']");
+                	var formObj = $("div[role='form']");
 
                     $("button[type='submit']").on("click", function(e){
                             e.preventDefault();
+                            var form = {
+                    				bstate : true,
+                    				btitle : $("#btitle").val(),
+                    				bcontent : $("#bcontent").val(),
+                    				bprice : $("#bprice").val(),
+                    				bdeleted : false,
+                    				memberMno : 1,
+                    		};
                             console.log("submit clicked>>>>>>>>>>>>>>>>")
                             var str="";
                             $(".uploadResult ul li").each(function(i, obj){
                                 var jobj = $(obj);
                                 console.dir(jobj); // 등록 다시 만들어야함..
-                                str += "<input type='hidden' name='attachList["+i+"].fuuid' value='"+jobj.data("fuuid")+"'>";
-                                str += "<input type='hidden' name='attachList["+i+"].fuploadpath' value='"+jobj.data("fuploadpath")+"'>";
-                                str += "<input type='hidden' name='attachList["+i+"].fname' value='"+jobj.data("fname")+"'>";
-                                str += "<input type='hidden' name='attachList["+i+"].ftype' value='"+jobj.data("ftype")+"'>";
-                                str += "<input type='hidden' name='attachList["+i+"].fmain' value='"+jobj.data("fmain")+"'>";
+                                str += "<input id='fuuid' type='hidden' name='attachList["+i+"].fuuid' value='"+jobj.data("fuuid")+"'>";
+                                str += "<input id='fuploadpath' type='hidden' name='attachList["+i+"].fuploadpath' value='"+jobj.data("fuploadpath")+"'>";
+                                str += "<input id='fname' type='hidden' name='attachList["+i+"].fname' value='"+jobj.data("fname")+"'>";
+                                str += "<input id='ftype' type='hidden' name='attachList["+i+"].ftype' value='"+jobj.data("ftype")+"'>";
+                                str += "<input id='fmain' type='hidden' name='attachList["+i+"].fmain' value='"+jobj.data("fmain")+"'>";
                             });
-                            formObj.append(str).submit();
+                            form.append(str).submit();
                             
-                            var form = {
-                    				"bstate" : true,
-                    				"btitle" : $("#btitle").val(),
-                    				"bcontent" : $("bcontent").val(),
-                    				"bprice" : $("bprice").val(),
-                    				"bdeleted" : false,
-                    				"memberMno" : 1,
-                    				"fuuid" : $("fuuid").val(),
-                    				"fuploadpath" : $("fuploadpath").val(),
-                    				"fname" : $("fname").val(),
-                    				"ftype" : $("ftype").val(),
-                    				"fmain" : $("fmain").val()
-                    		};
+                            
                     		$.ajax({
                             	url: "/board/insert",
-                            	contentType: "application/json; charset=utf-8",
+                            	contentType: "application/json; charset=UTF-8",
                             	data: JSON.stringify(form),
                             	type: "POST",
                             	dataType: "json",

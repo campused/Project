@@ -59,7 +59,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardListResDTO<BoardSearchResDTO> getPageList(BoardSearchRequestDTO dto) {
-		List<BoardSearchResDTO> result = boardMapper.getPageList(dto);
+		List<BoardSearchResDTO> result = boardMapper.getPageList(dto);;
 		log.info(result);
 		BoardTotalCountDTO totalCount = boardMapper.getAllCount();
 		int totalCnt = totalCount.getTotalCount();
