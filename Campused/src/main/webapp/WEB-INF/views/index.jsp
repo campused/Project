@@ -513,8 +513,6 @@ $(document).ready(function(){
 			
 			e.preventDefault();
 			
-			console.log("modalOnclick")
-			
 			var newBno = $(this).attr("data-bno");
 			
 			alert(newBno)
