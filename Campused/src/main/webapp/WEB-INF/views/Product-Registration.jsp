@@ -91,6 +91,7 @@
 
                     $("button[type='submit']").on("click", function(e){
                             e.preventDefault();
+                            
                             var form = {
                     				bstate : true,
                     				btitle : $("#btitle").val(),
@@ -101,19 +102,36 @@
                     		};
                             console.log("submit clicked>>>>>>>>>>>>>>>>")
                             var str="";
+                            
+                            form['attachList'] = [];
+                            
                             $(".uploadResult ul li").each(function(i, obj){
-                                var jobj = $(obj);
+                            	
+                            	var jobj = $(obj);
+                            	
+                            	var fileObj = {
+                            			fuuid:jobj.data("fuuid") 
+                            			}
+                            	
+                            	form['attachList'].push(fileObj)
+                            	
+                          /*       var jobj = $(obj);
                                 console.dir(jobj); // 등록 다시 만들어야함..
                                 str += "<input id='fuuid' type='hidden' name='attachList["+i+"].fuuid' value='"+jobj.data("fuuid")+"'>";
                                 str += "<input id='fuploadpath' type='hidden' name='attachList["+i+"].fuploadpath' value='"+jobj.data("fuploadpath")+"'>";
                                 str += "<input id='fname' type='hidden' name='attachList["+i+"].fname' value='"+jobj.data("fname")+"'>";
                                 str += "<input id='ftype' type='hidden' name='attachList["+i+"].ftype' value='"+jobj.data("ftype")+"'>";
-                                str += "<input id='fmain' type='hidden' name='attachList["+i+"].fmain' value='"+jobj.data("fmain")+"'>";
+                                str += "<input id='fmain' type='hidden' name='attachList["+i+"].fmain' value='"+jobj.data("fmain")+"'>"; */
                             });
-                            form.append(str).submit();
                             
                             
-                    		$.ajax({
+                            
+                            //form.append(str)
+                            //.submit();
+                            
+                            console.log(form)
+         					                   
+         /*            		$.ajax({
                             	url: "/board/insert",
                             	contentType: "application/json; charset=UTF-8",
                             	data: JSON.stringify(form),
@@ -122,7 +140,7 @@
                             	success: function() {
                             		console.log("success");
                             	}
-                            })
+                            }) */
                             
                     }); // end submit click Event!
                 	

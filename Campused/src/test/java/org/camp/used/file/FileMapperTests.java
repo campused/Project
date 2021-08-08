@@ -1,5 +1,6 @@
 package org.camp.used.file;
 
+import java.util.UUID;
 import java.util.stream.IntStream;
 
 import org.camp.used.board.BoardMapperTests;
@@ -34,10 +35,25 @@ public class FileMapperTests {
 					.fuploadpath("테스트용 업로드 경로")
 					.ftype(false)
 					.fmain(false)
-					.board_bno(604L)
+					.board_bno(400L)
 					.build();
 			fileMapper.testInsertFile(testDTO);
 		});
+	}
+	
+	@Test
+	public void testCreateOne() {
+		log.info("===testCreate File!!===");
+		UUID uuid = UUID.randomUUID();
+			FileTestInsertDTO testDTO = FileTestInsertDTO.builder()
+					.fuuid(uuid.toString())
+					.fname("테스트파일")
+					.fuploadpath("C:\\campUpload\\temp")
+					.ftype(false)
+					.fmain(false)
+					.board_bno(400L)
+					.build();
+			fileMapper.testInsertFile(testDTO);
 	}
 	
 }

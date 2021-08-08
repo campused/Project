@@ -80,8 +80,10 @@
   	</sql>
 
 	<insert id="insert"> 
-		insert into tbl_board (bstate, btitle, bcontent, bprice, bdeleted, bregdate, bmoddate, member_mno)
-		values (#{bstate}, #{btitle}, #{bcontent}, #{bprice}, #{bdeleted}, now(), now(), #{memberMno})
+		insert into tbl_board (bstate, btitle, bcontent, bprice, bdeleted,
+		bregdate, bmoddate, member_mno)
+		values (#{bstate}, #{btitle}, #{bcontent}, #{bprice}, #{bdeleted},
+		now(), now(), #{memberMno})
 	</insert>
 	
 	<delete id="delete">

@@ -299,51 +299,6 @@
 	</nav>
 </section>
 <section class="products section bg-gray">
-
-<<<<<<< HEAD
-	<!-- jQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-		crossorigin="anonymous">
-	</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-	$(function(){
-		board_list()
-	});
-	
-	function board_list() {
-		
-		var requestData = {
-				page: "1",
-				size: "10",
-				type: "",
-				keyword: ""
-		}
-		
-		$.ajax({
-			url: "/board/list?page=1&size=10&type=&keyword=",
-			method: "GET",
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			error:function(error,status,msg){
-				alert("상태코드 " + status + "에러메시지" + msg );
-			},
-			success: board_list_result,
-		})
-	}
-	
-	function board_list_result(xhr) {
-		console.log(xhr);
-	};
-})
-
-// end jQuery
-</script>
-
-=======
->>>>>>> branch 'Jinseob' of https://github.com/campused/Project.git
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
@@ -502,10 +457,7 @@ $(document).ready(function(){
 			error:function(error, status, msg){
 				alert("상태코드 " + status + "에러메시지" + msg );
 			},
-			
-			
 			success: result,
-			
 		})
 	}
 	
@@ -537,7 +489,6 @@ $(document).ready(function(){
 				+ '<a href="#!"><i class="tf-ion-android-cart"></i></a>'
 				+ '</li>'
 				+ '</ul>'
-				
 				+ '</div>'
 				+ '</div>' // thumb div end
 				
