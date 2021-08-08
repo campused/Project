@@ -24,7 +24,7 @@ public class BoardPageResultDTO {
         int tempEnd = (int) (Math.ceil(page/10.0) * 10);
         
         this.start = tempEnd - 9;
-        this.end = totalPage > tempEnd ? totalPage : tempEnd;
+        this.end = totalPage > tempEnd ? tempEnd : totalPage;
         
         prev = start > 1;
         next = totalPage > tempEnd;
