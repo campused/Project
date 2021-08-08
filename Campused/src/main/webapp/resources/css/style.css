@@ -744,17 +744,20 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 @media (max-width: 480px) {
   .top-header .logo {
     padding: 10px;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .top-header .logo {
     padding: 10px;
+    width: 100%;
   }
 }
 
 .top-header .logo a {
   display: inline-block;
+  width: 100%;
 }
 
 .cart-dropdown .media {

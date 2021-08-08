@@ -8,6 +8,7 @@
  		<id property="cno" column="cno"/>
  		<result property="cartMno" column="cartMno"/>
  		<collection property="BoardCartResDTO" resultMap="boardCartResMap"/>
+ 		<collection property="fileResDTO" resultMap="fileMap"/> 		
  	</resultMap>
  	
  	<resultMap type="org.camp.used.board.dto.BoardCartResDTO" id="boardCartResMap">
@@ -17,6 +18,15 @@
  		<result property="btitle" column="btitle"/>
  		<result property="bcontent" column="bcontent"/>
  		<result property="bprice" column="bprice"/>
+ 	</resultMap>
+ 	
+ 	<resultMap type="org.camp.used.file.dto.FileResDTO" id="fileMap">
+ 		<result property="fuuid" column="fuuid"/>
+ 		<result property="fname" column="fname"/>
+ 		<result property="fuploadpath" column="fuploadpath"/>
+ 		<result property="ftype" column="ftype"/>
+ 		<result property="fmain" column="fmain"/>
+ 		<result property="boardBno" column="board_bno"/>
  	</resultMap>
  	
  	<insert id="cartInsert">
@@ -33,11 +43,15 @@
 		SELECT 
 		c.cno, 
 		c.member_mno AS cartMno,
-		b.*  
+		b.*,
+		f.*
 		FROM tbl_cartlist c
 		LEFT JOIN tbl_board b ON c.board_bno = b.bno
+		LEFT JOIN tbl_file f ON f.board_bno = b.bno
+		and f.fmain = true
 		WHERE c.member_mno = #{mno}
 		AND cno > 0
+		GROUP BY cno
 		ORDER BY cno desc
  	</select>
  

@@ -80,8 +80,10 @@
   	</sql>
 
 	<insert id="insert"> 
-		insert into tbl_board (bstate, btitle, bcontent, bprice, bdeleted, bregdate, bmoddate, member_mno)
-		values (#{bstate}, #{btitle}, #{bcontent}, #{bprice}, #{bdeleted}, now(), now(), #{memberMno})
+		insert into tbl_board (bstate, btitle, bcontent, bprice, bdeleted,
+		bregdate, bmoddate, member_mno)
+		values (#{bstate}, #{btitle}, #{bcontent}, #{bprice}, #{bdeleted},
+		now(), now(), #{memberMno})
 	</insert>
 	
 	<delete id="delete">
@@ -119,7 +121,7 @@
 		LEFT JOIN tbl_member m ON b.member_mno = m.mno
 		LEFT JOIN tbl_reply r ON b.bno = r.board_bno
 		LEFT JOIN tbl_file f ON b.bno = f.board_bno
-		WHERE b.bno = 1
+		WHERE b.bno = #{m.mno}
 		AND b.bno > 0
   	</select>
   	

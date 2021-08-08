@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BoardInsertDTO {
 	
-	private int bstate;
+	private boolean bstate;
 	private String btitle;
 	private String bcontent;
 	private String bprice;
